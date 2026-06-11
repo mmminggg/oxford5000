@@ -84,6 +84,60 @@ h1 em{font-style:italic;font-weight:400}
 .spk{appearance:none;-webkit-appearance:none;border:1.5px solid var(--line2);background:var(--card);color:var(--brand);width:42px;height:42px;border-radius:50%;font-size:18px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;margin-top:16px;transition:.15s}
 .spk:hover{background:var(--brand);color:#fff;border-color:transparent}
 .front .big{cursor:pointer}
+/* DET */
+.guide{background:var(--card);border:1.5px solid var(--line2);border-radius:14px;padding:4px 16px;font-family:var(--kr)}
+.guide summary{cursor:pointer;font-weight:700;font-size:14.5px;color:var(--brand);padding:10px 0}
+.guide-in{font-size:13.5px;line-height:1.75;color:var(--muted);padding-bottom:12px}
+.guide-in b{color:var(--ink)}
+.inp{font-family:var(--kr);font-size:18px;padding:13px 16px;border:1.6px solid var(--line2);border-radius:13px;background:var(--card);color:var(--ink);outline:none;width:100%;max-width:420px;text-align:center}
+.inp:focus{border-color:var(--brand)}
+.inp.ok{border-color:var(--a1);background:#eef5ee}
+.inp.no{border-color:var(--c1);background:#f8ecea}
+.bigspk{width:74px;height:74px;border-radius:50%;border:1.6px solid var(--line2);background:var(--card);font-size:30px;cursor:pointer;transition:.15s}
+.bigspk:hover{background:var(--brand);color:#fff;border-color:transparent}
+.fb{font-family:var(--kr);font-size:16px;min-height:24px;text-align:center}
+.fb .ok{color:#1d5e36;font-weight:800;font-size:17px}
+.fb .no{color:#8a2a25;font-weight:800;font-size:17px}
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;max-width:520px}
+@media(max-width:560px){.picks{grid-template-columns:repeat(2,1fr)}}
+.pick{font-family:var(--serif);font-weight:600;font-size:17px;padding:14px 8px;border:1.6px solid var(--line2);background:var(--card);color:var(--ink);border-radius:12px;cursor:pointer;transition:.12s}
+.pick.sel{border-color:var(--ink);background:#efe9da}
+.pick.good{border-color:var(--a1);background:#e7f1e7;color:#1d5e36}
+.pick.bad{border-color:var(--c1);background:#f6e6e4;color:#8a2a25}
+.pick.miss{border-style:dashed;border-color:var(--a1);color:#1d5e36}
+.det-kr{font-family:var(--kr);font-weight:600;font-size:clamp(20px,5vw,30px);text-align:center;line-height:1.4}
+/* PLAN (오늘 학습) */
+.plan-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:6px 0 4px}
+.plan-date{font-family:var(--serif);font-weight:900;font-size:clamp(24px,5vw,34px);letter-spacing:-.01em}
+.dday{font-family:var(--sans);font-weight:700;font-size:13px;color:#fff;background:var(--brand);padding:4px 10px;border-radius:999px}
+.phase{font-family:var(--kr);font-size:13px;color:var(--muted)}
+.plan-nav{margin-left:auto;display:flex;gap:6px}
+.pnav{font-family:var(--kr);font-size:13px;font-weight:600;border:1.4px solid var(--line2);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:9px;cursor:pointer}
+.pnav:hover{border-color:var(--ink)}
+.pbar{height:10px;background:var(--paper2);border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:10px 0 4px}
+.pbar i{display:block;height:100%;background:linear-gradient(90deg,var(--a1),var(--a2));transition:width .3s}
+.ptext{font-family:var(--kr);font-size:12.5px;color:var(--muted);margin-bottom:14px}
+.task{display:flex;align-items:center;gap:12px;background:var(--card);border:1.5px solid var(--line2);border-radius:13px;padding:13px 14px;margin-bottom:9px;transition:.15s}
+.task.done{background:#eef3ec;border-color:#cfe0cf}
+.task .ck{width:22px;height:22px;border-radius:7px}
+.task .tl{font-family:var(--kr);font-size:14.5px;color:var(--ink);flex:1;line-height:1.45}
+.task.done .tl{color:var(--faint);text-decoration:line-through;text-decoration-color:var(--line2)}
+.task .go{font-family:var(--kr);font-size:12px;font-weight:700;border:1.3px solid var(--line2);background:transparent;color:var(--brand);padding:6px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.task .go:hover{background:var(--brand);color:#fff;border-color:transparent}
+.week{display:flex;gap:8px;margin:16px 0 4px;flex-wrap:wrap}
+.day{flex:1;min-width:54px;text-align:center;background:var(--card);border:1.4px solid var(--line2);border-radius:11px;padding:8px 4px;cursor:pointer}
+.day.today{border-color:var(--brand)}
+.day .dl{font-family:var(--sans);font-size:10.5px;color:var(--faint);letter-spacing:.04em}
+.day .dp{font-family:var(--sans);font-weight:800;font-size:13px;margin-top:3px}
+.day .dp.full{color:var(--a1)} .day .dp.part{color:var(--b1)} .day .dp.zero{color:var(--line2)}
+.timerbox{font-family:var(--sans);font-weight:800;font-size:clamp(40px,10vw,64px);letter-spacing:.02em;color:var(--ink)}
+.timerbox.warn{color:var(--c1)}
+.tphase{font-family:var(--kr);font-size:14px;font-weight:700;color:var(--brand)}
+.ta{font-family:var(--kr);font-size:15px;line-height:1.7;width:100%;max-width:560px;min-height:150px;padding:14px;border:1.6px solid var(--line2);border-radius:13px;background:var(--card);color:var(--ink);outline:none;resize:vertical}
+.ta:focus{border-color:var(--brand)}
+.wc{font-family:var(--sans);font-size:13px;color:var(--muted)}
+.wc b{color:var(--brand)}
+.topic{font-family:var(--kr);font-size:clamp(16px,4vw,20px);font-weight:600;text-align:center;line-height:1.6;max-width:560px;background:var(--card);border:1.5px solid var(--line2);border-radius:13px;padding:16px 18px}
 .more{margin:26px auto 0;display:block;font-family:var(--kr);font-weight:600;background:var(--card);border:1.5px solid var(--ink);color:var(--ink);padding:11px 26px;border-radius:999px;cursor:pointer}
 
 /* FLASHCARD */
@@ -174,21 +228,25 @@ h1 em{font-style:italic;font-weight:400}
 </header>
 
 <div class="tabs" id="tabs">
-  <button class="tab on" data-mode="all">전체 <span id="cntAll" class="badge">0</span></button>
+  <button class="tab on" data-mode="plan">오늘 학습</button>
+  <button class="tab" data-mode="all">전체 <span id="cntAll" class="badge">0</span></button>
   <button class="tab" data-mode="known">암기 <span id="cntKnown" class="badge">0</span></button>
   <button class="tab" data-mode="unknown">미암기 <span id="cntUnknown" class="badge">0</span></button>
   <button class="tab" data-mode="card">플래시카드</button>
   <button class="tab" data-mode="quiz">퀴즈</button>
+  <button class="tab" data-mode="det">DET 연습</button>
 </div>
 
-<div class="filters">
+<div class="filters" id="filters">
   <div id="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
   <div class="spacer"></div>
   <input id="search" class="search hide" placeholder="단어 또는 뜻 검색…">
   <span class="count" id="count"></span>
 </div>
 
-<div id="view-list"></div>
+<div id="view-plan"></div>
+
+<div id="view-list" class="hide"></div>
 
 <div id="view-card" class="hide">
   <div class="stage">
@@ -227,9 +285,40 @@ h1 em{font-style:italic;font-weight:400}
       <div class="score" id="score">점수 <b>0</b> / 0</div>
     </div>
     <div class="qprompt" id="qPrompt"></div>
+    <div class="fb" id="qFb" style="font-size:16px"></div>
     <div class="opts" id="qOpts"></div>
     <button class="btn ghost hide" id="qNext">다음 문제 →</button>
   </div>
+</div>
+
+<div id="view-det" class="hide">
+  <details class="guide">
+    <summary>📋 7/20까지 120점 — 자투리 시간 공부 전략 (펼쳐보기)</summary>
+    <div class="guide-in">
+      <p><b>하루 루틴 (총 40~50분, 쪼개서)</b></p>
+      <p>· <b>출근길 15분</b> — 플래시카드 "미암기만" 30~40장. 단어 클릭해서 발음도 같이 듣기<br>
+      · <b>점심 10분</b> — DET 연습 "듣고 쓰기" 15문제 (받아쓰기는 DET 핵심 유형)<br>
+      · <b>화장실/대기 3분</b> — "진짜 단어 고르기" 3~5라운드 (DET 첫 문제 유형 그대로)<br>
+      · <b>퇴근길 15분</b> — 퀴즈 30문제 + 오늘 틀린 단어 미암기 탭에서 재확인<br>
+      · <b>자기 전 5분</b> — 오늘 새로 외운 단어 한 번 더 (자기 전 복습이 기억에 제일 잘 남아요)</p>
+      <p><b>주차별 계획</b></p>
+      <p>· <b>~6/30</b> — 어휘 집중: B1·B2 미암기 소진 + 듣고 쓰기 매일. 어휘·받아쓰기가 점수의 절반<br>
+      · <b>7/1~7/13</b> — C1 어휘 + 쓰기/말하기: 사진 보고 1분 묘사 말하기, 50단어 글쓰기 매일 1회 (폰 녹음 활용)<br>
+      · <b>7/14~7/19</b> — 실전: DET 공식 사이트 무료 연습 테스트를 격일로, 시간 압박에 적응</p>
+      <p><b>꿀팁</b> — 무료 연습 테스트는 englishtest.duolingo.com에서 횟수 제한 없이 가능. 점수 추이를 보며 약한 유형에 시간을 더 쓰세요. 말하기는 "사진 묘사 → 내 의견 → 이유 2개" 틀을 입에 붙이면 빠르게 늘어요.</p>
+    </div>
+  </details>
+  <div class="qbar" style="margin-top:14px">
+    <div class="toggle" id="detMode">
+      <button data-dm="dict" class="on">듣고 쓰기</button>
+      <button data-dm="real">진짜 단어</button>
+      <button data-dm="type">뜻 보고 쓰기</button>
+      <button data-dm="speak">말하기</button>
+      <button data-dm="write">쓰기</button>
+    </div>
+    <div class="score" id="detStat"></div>
+  </div>
+  <div id="detArea" class="quiz" style="margin-top:16px"></div>
 </div>
 
 <p class="foot">Oxford 5000 word list · 한국어 뜻 포함 · 학습용으로 제작 · 진행 상황은 이 브라우저에 저장됩니다.</p>
@@ -248,8 +337,9 @@ function pickVoice(){ try{ const vs=speechSynthesis.getVoices(); enVoice = vs.fi
 if('speechSynthesis' in window){ pickVoice(); try{ speechSynthesis.onvoiceschanged=pickVoice; }catch(e){} }
 function speak(text){ try{ if(!('speechSynthesis' in window)||!text) return; speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang='en-US'; if(enVoice) u.voice=enVoice; u.rate=0.92; speechSynthesis.speak(u); }catch(e){} }
 function speakWord(d){ const w=(d[0]||'').replace(/\s*\(.*?\)\s*/g,' ').trim(); speak(w); }
+const FAKE = ["barkory","beekane","beener","bepjeest","berrnish","beshute","bishent","bleldel","blespy","bloft","bollwunk","bornter","bothory","bouss","brebent","breedent","breedle","brel","bresk","brirssy","broadvoad","brohunnd","brok","brornane","brorrdmuk","buntstisk","caikory","cerpwourk","cershy","cerspime","clearner","cleckute","cleetish","cliftent","clody","clunnle","coatsnedy","coupbeaer","croaber","croagime","cronkvirl","crorst","crortute","crunute","cunther","curdbrab","dabain","dackane","dadel","daifter","darndory","dearkel","deekbret","dersk","dethode","dolckle","dolspane","dornle","dril","drinkute","drirftane","drirgy","drirrnane","drirthish","drolppift","drulle","drunt","druspute","dunpode","fairker","farstane","feakain","fentel","fepane","ferndy","firpish","fitane","flarrmode","flarskode","fleenime","fleenk","fleeskish","fleshle","floaftish","floarment","flolrt","flonder","foathory","freendane","frirtime","froalle","frocrarnt","frorpel","fuver","geaftle","geelvean","geerdcunk","girftory","glarckain","gleemane","gleesk","glend","glentute","glernane","gligory","glistane","gloathode","glolent","glolshish","glolsk","glunftode","glurdhoub","graift","grantode","grarbime","gream","grernkle","grolmory","grungwed","gungjeeg","gurmode","guute","haient","heekish","heert","herrtel","holdy","hunldrint","hunrd","huntime","jackcrunk","jaib","jaitanker","jeelvain","jirtdeker","jorstane","jundode","lagloaime","lainent","larb","learmory","leaspute","leeck","leelnirg","lertle","lirt","loudel","manime","marlain","meespane","merkle","mindode","mistent","mormworrt","mornklost","moumy","nearmy","nepmunent","noamain","nockle","nukclirck","nushane","nuty","peadime","plaild","plakory","pleant","pleask","pleast","plergute","plerndode","plirnkane","plishish","plolm","plolt","plolth","polker","polnle","porckime","posnetane","pourmode","prathel","preap","preard","prernkish","prirndle","pritane","proarder","proashory","prolbode","pushskod","pusptreen","quael","quaitel","queanent","queenky","queent","queepel","quelode","quinkent","quurmblat","rarnky","roanky","rorkplirk","rorm","rorrdle","rorsk","rort","roulish","routy","rurtent","saitode","sarbory","scaildel","scaissent","scamhirny","sceaft","scenneesh","scerrdute","scitain","scolish","scossute","scunnkory","seardode","sharskish","sherssish","shirkime","shirshent","sholgime","sholnkime","shunker","sirss","sirsssoan","skairn","skarckent","skarrmy","skegory","skerthory","skild","skirlish","skorkode","skouth","skurd","slailent","slarky","slasker","slatory","sleatle","slerscep","sliy","slunrnime","slurk","slushel","smarter","smeald","smeepime","smersser","smitent","smoab","smoanish","smolckane","smolspute","smountel","smunple","smurm","snart","snestime","snibory","snoaty","snolnt","snunftish","soanute","soumer","spairm","sparsp","spenkane","spirb","spoam","spoarny","spoll","sporck","spubshun","staip","stidish","stirmane","stoarnory","stomane","stopane","stordsack","strakute","strathish","streetime","stridain","strirtush","stroamle","struntle","stunftute","sunrmory","taik","teasp","thaidle","therrmane","thirk","thoagjoal","tholdute","thornel","thousher","thund","thunrdle","tolrd","tolskode","tondle","tostory","treasp","tremel","trerb","trerd","troadode","trunble","trunmute","truntent","truspoask","vaiment","vaishirb","vockent","vuksnaift","vulslarty","vunckent","vundel","vunstel","vunty","wealrind","wirth","wonkime","worlent","wournute","wudane","wunrnish","wunrtel","wunthle"];
 
-let state = { mode:'all', lv:'ALL', q:'', listN:300 };
+let state = { mode:'plan', lv:'ALL', q:'', listN:300 };
 
 // ---- persistence ----
 const KEY='oxford5000_progress_v1';
@@ -291,9 +381,12 @@ $$('.tab').forEach(t=>t.onclick=()=>{
   if(state.mode==='quiz') quizFromReview=false;
   $$('.tab').forEach(x=>x.classList.toggle('on',x===t));
   const isList = LIST_MODES.includes(state.mode);
+  $('#view-plan').classList.toggle('hide',state.mode!=='plan');
   $('#view-list').classList.toggle('hide',!isList);
   $('#view-card').classList.toggle('hide',state.mode!=='card');
   $('#view-quiz').classList.toggle('hide',state.mode!=='quiz');
+  $('#view-det').classList.toggle('hide',state.mode!=='det');
+  $('#filters').classList.toggle('hide',state.mode==='plan');
   $('#search').classList.toggle('hide',!isList);
   state.listN=300;
   render();
@@ -317,11 +410,14 @@ function statusFiltered(){
 
 function render(){
   updateCounts();
+  const fl=document.getElementById('filters'); if(fl) fl.classList.toggle('hide', state.mode==='plan');
   if(LIST_MODES.includes(state.mode)){
     const items=statusFiltered().sort((a,b)=>a[0].toLowerCase().localeCompare(b[0].toLowerCase()) || a[0].localeCompare(b[0]));
     $('#count').textContent = items.length.toLocaleString()+' 단어';
     renderList(items);
   } else if(state.mode==='card'){ renderCard(); }
+  else if(state.mode==='det'){ renderDet(); }
+  else if(state.mode==='plan'){ renderPlan(); }
   else { renderQuiz(); }
 }
 
@@ -411,6 +507,7 @@ function correctPool(){
 const distractorPool = DATA.filter(d=>d[3]);
 function nextQuestion(){
   qAnswered=false; $('#qNext').classList.add('hide');
+  const fbEl=document.getElementById('qFb'); if(fbEl) fbEl.innerHTML='';
   const cp=correctPool();
   const correct=cp[Math.floor(Math.random()*cp.length)];
   const opts=[correct];
@@ -448,6 +545,10 @@ function answer(btn,o){
     b.style.pointerEvents='none';
   });
   updateScore();
+  const corrShow = qDir==='e2k' ? (qCur.correct[3]||'') : qCur.correct[0];
+  $('#qFb').innerHTML = isCorrect
+    ? '<span class="ok">✓ 정답!</span>'
+    : '<span class="no">✗ 오답</span> — 정답: <b>'+esc(corrShow)+'</b>';
   $('#qNext').classList.remove('hide');
 }
 function updateScore(){ $('#score').innerHTML='점수 <b>'+qScore+'</b> / '+qTotal; }
@@ -470,7 +571,7 @@ function setAuthUI(){
 function schedulePush(){ if(!cloudOn()||!user||syncing) return; clearTimeout(pushTimer); pushTimer=setTimeout(pushCloud,800); }
 async function pushCloud(){
   if(!cloudOn()||!user) return;
-  try{ await sb.from('kv').upsert({user_id:user.id, data:{known:[...known],review:[...review]}, updated_at:new Date().toISOString()}); }
+  try{ await sb.from('kv').upsert({user_id:user.id, data:{known:[...known],review:[...review],plan:(typeof plan!=='undefined'?plan:{})}, updated_at:new Date().toISOString()}); }
   catch(e){ console.warn('push',e); }
 }
 async function pullCloud(){
@@ -481,6 +582,10 @@ async function pullCloud(){
     const cloud=(data&&data.data)||{known:[],review:[]};
     known=new Set([...(cloud.known||[]),...known]);
     review=new Set([...(cloud.review||[]),...review]);
+    if(cloud.plan && typeof plan!=='undefined'){
+      for(const d in cloud.plan){ plan[d]=Object.assign({}, cloud.plan[d]||{}, plan[d]||{}); }
+      try{ localStorage.setItem('oxford5000_plan_v1', JSON.stringify(plan)); }catch(e){}
+    }
     persistLocal(); updateBadge(); render();
   }catch(e){ console.warn('pull',e); }
   syncing=false;
@@ -499,8 +604,9 @@ function bindBackup(){
   const g=id=>document.getElementById(id);
   const exp=g('btnExport'), imp=g('btnImport'), file=g('importFile');
   if(exp) exp.onclick=()=>{
-    const payload={ app:'oxford5000', version:1, exportedAt:new Date().toISOString(),
-                    known:[...known], review:[...review] };
+    const payload={ app:'oxford5000', version:2, exportedAt:new Date().toISOString(),
+                    known:[...known], review:[...review],
+                    plan:(typeof plan!=='undefined'?plan:{}) };
     const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
     const url=URL.createObjectURL(blob);
     const a=document.createElement('a');
@@ -520,6 +626,11 @@ function bindBackup(){
         const merge=confirm('가져온 기록을 현재 기록과 "합칠까요"?\n\n확인 = 합치기(기존 유지 + 추가)\n취소 = 현재 기록을 덮어쓰기');
         if(merge){ known=new Set([...known,...k]); review=new Set([...review,...rv]); }
         else { known=new Set(k); review=new Set(rv); }
+        if(obj.plan && typeof plan!=='undefined'){
+          if(merge){ for(const d in obj.plan){ plan[d]=Object.assign({}, obj.plan[d]||{}, plan[d]||{}); } }
+          else { plan=obj.plan||{}; }
+          try{ localStorage.setItem('oxford5000_plan_v1', JSON.stringify(plan)); }catch(e){}
+        }
         // 암기로 분류된 건 미암기(review)에서 제거
         for(const x of known) review.delete(x);
         save(); render();
@@ -544,6 +655,377 @@ function bindAuth(){
 }
 bindAuth();
 initCloud();
+
+// ===== DET 연습 =====
+let detM='dict', detCur=null, detPicks=null, detLock=false;
+const DKEY='oxford5000_det_v1';
+let detStats={d:'',n:0,streak:0};
+try{ const s=localStorage.getItem(DKEY); if(s) detStats=Object.assign(detStats,JSON.parse(s)); }catch(e){}
+function today(){ const t=new Date(),p=n=>String(n).padStart(2,'0'); return t.getFullYear()+'-'+p(t.getMonth()+1)+'-'+p(t.getDate()); }
+function detBump(){
+  const td=today();
+  if(detStats.d!==td){
+    const y=new Date(); y.setDate(y.getDate()-1);
+    const p=n=>String(n).padStart(2,'0');
+    const yd=y.getFullYear()+'-'+p(y.getMonth()+1)+'-'+p(y.getDate());
+    detStats.streak = (detStats.d===yd)? (detStats.streak||0)+1 : 1;
+    detStats.d=td; detStats.n=0;
+  }
+  detStats.n++;
+  try{ localStorage.setItem(DKEY, JSON.stringify(detStats)); }catch(e){}
+  detStatUI();
+}
+function detStatUI(){
+  const el=document.getElementById('detStat'); if(!el) return;
+  const n=(detStats.d===today())? detStats.n : 0;
+  el.innerHTML='오늘 <b>'+n+'</b>문제 · 연속 '+(detStats.streak||0)+'일';
+}
+const detNorm=s=>(s||'').toLowerCase().replace(/\s*\(.*?\)\s*/g,' ').replace(/\s+/g,' ').trim();
+function detPool(){ const p=filtered().filter(d=>d[3]); return p.length? p : DATA.filter(d=>d[3]); }
+function rnd(a){ return a[Math.floor(Math.random()*a.length)]; }
+
+$$('#detMode button').forEach(b=>b.onclick=()=>{ detM=b.dataset.dm; $$('#detMode button').forEach(x=>x.classList.toggle('on',x===b)); renderDet(); });
+
+function renderDet(){ detStatUI(); detLock=false; if(typeof stopDetTimer==='function') stopDetTimer();
+  if(detM==='dict') detDict();
+  else if(detM==='real') detReal();
+  else if(detM==='speak') detSpeak();
+  else if(detM==='write') detWrite();
+  else detType();
+}
+
+// 1) 듣고 쓰기 (받아쓰기)
+function detDict(){
+  detCur=rnd(detPool()); detLock=false;
+  const a=$('#detArea');
+  a.innerHTML='<div class="hint">발음을 듣고 영어 단어를 입력하세요</div>'+
+    '<button class="bigspk" id="dSpk" title="다시 듣기">🔊</button>'+
+    '<input class="inp" id="dInp" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="들리는 단어 입력">'+
+    '<div class="fb" id="dFb"></div>'+
+    '<div class="controls"><button class="btn" id="dGo">확인</button></div>';
+  const sp=()=>speakWord(detCur);
+  $('#dSpk').onclick=sp; setTimeout(sp,250);
+  const inp=$('#dInp'); inp.focus();
+  function check(){
+    if(detLock) return; detLock=true; detBump();
+    const ok=detNorm(inp.value)===detNorm(detCur[0]);
+    inp.classList.add(ok?'ok':'no');
+    $('#dFb').innerHTML= ok? '<span class="ok">✓ 정답!</span> '+esc(detCur[3]||'')
+      : '<span class="no">✗ 오답</span> 정답: <b>'+esc(detCur[0])+'</b> — '+esc(detCur[3]||'');
+    if(ok) markKnown(detCur); else markReview(detCur);
+    $('#dGo').textContent='다음 문제 →';
+    try{$('#dFb').scrollIntoView({block:'nearest',behavior:'smooth'});}catch(e){}
+  }
+  $('#dGo').onclick=()=>{ detLock? detDict() : check(); };
+  inp.addEventListener('keydown',e=>{ if(e.key==='Enter'){ detLock? detDict() : check(); }});
+}
+
+// 2) 진짜 단어 고르기
+function detReal(){
+  detLock=false;
+  const pool=detPool();
+  const realN=3+Math.floor(Math.random()*2); // 3~4
+  const reals=[]; const seen=new Set();
+  while(reals.length<realN){ const d=rnd(pool); if(!seen.has(d[0])){seen.add(d[0]); reals.push(d);} }
+  const fakes=[]; while(fakes.length<6-realN){ const f=rnd(FAKE); if(!seen.has(f)){seen.add(f); fakes.push(f);} }
+  const opts=[...reals.map(d=>({t:d[0],real:true,d})), ...fakes.map(f=>({t:f,real:false}))];
+  shuffle(opts);
+  detPicks={opts, sel:new Set()};
+  const a=$('#detArea');
+  a.innerHTML='<div class="hint">진짜 영어 단어를 모두 고르세요 (가짜 단어가 섞여 있어요)</div>'+
+    '<div class="picks" id="pk">'+opts.map((o,i)=>'<button class="pick" data-i="'+i+'">'+esc(o.t)+'</button>').join('')+'</div>'+
+    '<div class="fb" id="pFb"></div>'+
+    '<div class="controls"><button class="btn" id="pGo">확인</button></div>';
+  $$('#pk .pick').forEach(b=>b.onclick=()=>{ if(detLock) return; const i=+b.dataset.i; if(detPicks.sel.has(i)){detPicks.sel.delete(i); b.classList.remove('sel');} else {detPicks.sel.add(i); b.classList.add('sel');} });
+  function pCheck(){
+    if(detLock) return; detLock=true; detBump();
+    let allOk=true;
+    $$('#pk .pick').forEach(b=>{
+      const i=+b.dataset.i, o=detPicks.opts[i], sel=detPicks.sel.has(i);
+      if(o.real && sel) b.classList.add('good');
+      else if(o.real && !sel){ b.classList.add('miss'); allOk=false; if(o.d) markReview(o.d); }
+      else if(!o.real && sel){ b.classList.add('bad'); allOk=false; }
+      b.style.pointerEvents='none';
+    });
+    $('#pFb').innerHTML= allOk? '<span class="ok">✓ 정답! 완벽해요</span>' : '<span class="no">✗ 오답</span> — 점선=놓친 진짜 단어, 빨강=가짜 단어';
+    $('#pGo').textContent='다음 문제 →';
+    try{$('#pFb').scrollIntoView({block:'nearest',behavior:'smooth'});}catch(e){}
+  }
+  $('#pGo').onclick=()=>{ detLock? detReal() : pCheck(); };
+}
+
+// 3) 뜻 보고 쓰기
+function detType(){
+  detCur=rnd(detPool()); detLock=false;
+  const a=$('#detArea');
+  a.innerHTML='<div class="hint">한국어 뜻을 보고 영어 단어를 입력하세요</div>'+
+    '<div class="det-kr">'+esc(detCur[3])+(detCur[2]?' <span class="pos">'+esc(detCur[2])+'</span>':'')+'</div>'+
+    '<input class="inp" id="tInp" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="영어 단어 입력">'+
+    '<div class="fb" id="tFb"></div>'+
+    '<div class="controls"><button class="btn" id="tGo">확인</button><button class="btn ghost" id="tHint">첫 글자 힌트</button></div>';
+  const inp=$('#tInp'); inp.focus();
+  function check(){
+    if(detLock) return; detLock=true; detBump();
+    const ok=detNorm(inp.value)===detNorm(detCur[0]);
+    inp.classList.add(ok?'ok':'no');
+    $('#tFb').innerHTML= ok? '<span class="ok">✓ 정답!</span>'
+      : '<span class="no">✗ 오답</span> 정답: <b>'+esc(detCur[0])+'</b>';
+    if(ok) markKnown(detCur); else markReview(detCur);
+    speakWord(detCur);
+    $('#tGo').textContent='다음 문제 →';
+    try{$('#tFb').scrollIntoView({block:'nearest',behavior:'smooth'});}catch(e){}
+  }
+  $('#tGo').onclick=()=>{ detLock? detType() : check(); };
+  $('#tHint').onclick=()=>{ const w=detNorm(detCur[0]); $('#tFb').innerHTML='힌트: <b>'+esc(w[0].toUpperCase())+'</b>로 시작, '+w.replace(/ /g,'').length+'글자'; };
+  inp.addEventListener('keydown',e=>{ if(e.key==='Enter'){ detLock? detType() : check(); }});
+}
+
+// ===== 오늘 학습 (날짜별 체크리스트) =====
+const PKEY='oxford5000_plan_v1';
+let plan={}; // {'YYYY-MM-DD': {taskId:true}}
+try{ const s=localStorage.getItem(PKEY); if(s) plan=JSON.parse(s)||{}; }catch(e){}
+function persistPlan(){ try{ localStorage.setItem(PKEY, JSON.stringify(plan)); }catch(e){} schedulePush(); }
+let planDate=null;
+const TEST_DAY='2026-07-20';
+function dShift(ds,n){ const d=new Date(ds+'T12:00:00'); d.setDate(d.getDate()+n); const p=x=>String(x).padStart(2,'0'); return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate()); }
+function dLabel(ds){ const d=new Date(ds+'T12:00:00'); const wd=['일','월','화','수','목','금','토'][d.getDay()]; return (d.getMonth()+1)+'월 '+d.getDate()+'일 ('+wd+')'; }
+
+function tasksFor(ds){
+  if(ds===TEST_DAY) return [
+    {id:'gear',label:'🖥 장비 점검 — 카메라·마이크·조용한 공간·신분증(여권) 준비'},
+    {id:'warm',label:'🔊 가벼운 워밍업 — 듣고 쓰기 5문제만 (무리 금지)',go:{m:'det',dm:'dict'}},
+    {id:'rule',label:'📋 시험 규칙 재확인 — 시선 처리, 화면 이탈 금지, 메모 금지'},
+    {id:'go',label:'🍀 시험 30분 전 자리 세팅 완료. 화이팅!'},
+  ];
+  if(ds>TEST_DAY) return [
+    {id:'rest',label:'🎉 시험 끝! 가볍게 미암기 단어만 복습',go:{m:'card',scope:'unknown'}},
+  ];
+  if(ds<'2026-07-01') return [ // 1단계: 어휘 집중 (아침10분+출근1h+점심1h+퇴근1h+저녁1h)
+    {id:'m15',label:'🌅 아침 10분 — 어제 틀린 단어 플래시카드 15장 (눈뜨자마자 복습이 최고 효율)',go:{m:'card',scope:'unknown'}},
+    {id:'c1_f',label:'🚇 출근① (30분) — 플래시카드 "미암기만" 60장, 발음 들으며',go:{m:'card',scope:'unknown'}},
+    {id:'c1_q',label:'🚇 출근② (30분) — 퀴즈 50문제',go:{m:'quiz'}},
+    {id:'l_d20',label:'🍱 점심① (20분) — 듣고 쓰기 20문제',go:{m:'det',dm:'dict'}},
+    {id:'l_f40',label:'🍱 점심② (25분) — 플래시카드 "미암기만" 40장, 발음 클릭하며',go:{m:'card',scope:'unknown'}},
+    {id:'l_r8',label:'🍱 점심③ (10분) — 진짜 단어 고르기 8라운드',go:{m:'det',dm:'real'}},
+    {id:'c2_d',label:'🚇 퇴근① (30분) — 듣고 쓰기 25문제',go:{m:'det',dm:'dict'}},
+    {id:'c2_r',label:'🚇 퇴근② (30분) — 진짜 단어 15라운드 + 오늘 틀린 단어 훑기',go:{m:'det',dm:'real'}},
+    {id:'e_q40',label:'🌙 저녁① (20분) — 퀴즈 40문제',go:{m:'quiz'}},
+    {id:'e_t15',label:'🌙 저녁② (15분) — 뜻 보고 쓰기 15문제 (철자까지 정확히)',go:{m:'det',dm:'type'}},
+    {id:'e_f40',label:'🌙 저녁③ (20분) — 새 단어 플래시카드 40장',go:{m:'card',scope:'unknown'}},
+    {id:'e_w5',label:'🌙 저녁④ (5분) — 오늘 틀린 단어 미암기 탭에서 훑고 마무리',go:{m:'unknown'}},
+  ];
+  if(ds<'2026-07-14') return [ // 2단계: 어휘 유지 + 말하기/쓰기
+    {id:'m15',label:'🌅 아침 10분 — 미암기 플래시카드 15장',go:{m:'card',scope:'unknown'}},
+    {id:'c1_f',label:'🚇 출근① (30분) — 플래시카드 "미암기만" 50장',go:{m:'card',scope:'unknown'}},
+    {id:'c1_q',label:'🚇 출근② (30분) — 퀴즈 40문제',go:{m:'quiz'}},
+    {id:'l_d15',label:'🍱 점심① (15분) — 듣고 쓰기 15문제',go:{m:'det',dm:'dict'}},
+    {id:'l_s2',label:'🍱 점심② (15분) — 말하기 연습 2회 (준비30초+말하기90초)',go:{m:'det',dm:'speak'}},
+    {id:'l_f25',label:'🍱 점심③ (25분) — 플래시카드 미암기 30장 + 진짜 단어 3라운드',go:{m:'card',scope:'unknown'}},
+    {id:'c2_d',label:'🚇 퇴근① (30분) — 듣고 쓰기 20문제',go:{m:'det',dm:'dict'}},
+    {id:'c2_r',label:'🚇 퇴근② (30분) — 진짜 단어 10라운드 + 오늘 틀린 단어 복습',go:{m:'det',dm:'real'}},
+    {id:'e_w1',label:'🌙 저녁① (10분) — 쓰기 연습 1회 (5분 타이머, 50단어+)',go:{m:'det',dm:'write'}},
+    {id:'e_q30',label:'🌙 저녁② (15분) — 퀴즈 30문제',go:{m:'quiz'}},
+    {id:'e_t15',label:'🌙 저녁③ (15분) — 뜻 보고 쓰기 15문제',go:{m:'det',dm:'type'}},
+    {id:'e_f20',label:'🌙 저녁④ (20분) — 새 단어 플래시카드 20장 + 오늘 틀린 것 복습',go:{m:'card',scope:'unknown'}},
+  ];
+  const day=+ds.slice(-2);
+  if(day%2===0) return [ // 3단계 짝수날: 저녁에 실전 모의
+    {id:'m15',label:'🌅 아침 10분 — 미암기 플래시카드 15장',go:{m:'card',scope:'unknown'}},
+    {id:'c1_f',label:'🚇 출근① (30분) — 플래시카드 미암기 40장',go:{m:'card',scope:'unknown'}},
+    {id:'c1_q',label:'🚇 출근② (30분) — 퀴즈 30문제 (가볍게)',go:{m:'quiz'}},
+    {id:'l_d10',label:'🍱 점심① (15분) — 듣고 쓰기 10문제 + 진짜 단어 5라운드',go:{m:'det',dm:'dict'}},
+    {id:'l_s1',label:'🍱 점심② (10분) — 말하기 연습 1회',go:{m:'det',dm:'speak'}},
+    {id:'c2_l',label:'🚇 퇴근 (1시간) — 미암기 가볍게 + 컨디션 관리 (저녁 모의테스트 대비, 무리 금지)',go:{m:'card',scope:'unknown'}},
+    {id:'e_mock',label:'🌙 저녁 (1시간) — 🏁 공식 무료 연습 테스트 1회 → 결과에서 약한 유형 메모 (englishtest.duolingo.com, PC·조용한 곳)'},
+  ];
+  return [ // 3단계 홀수날: 약점 보강
+    {id:'m15',label:'🌅 아침 10분 — 미암기 플래시카드 15장',go:{m:'card',scope:'unknown'}},
+    {id:'c1_f',label:'🚇 출근① (30분) — 플래시카드 미암기 50장',go:{m:'card',scope:'unknown'}},
+    {id:'c1_q',label:'🚇 출근② (30분) — 퀴즈 40문제',go:{m:'quiz'}},
+    {id:'l_d15',label:'🍱 점심① (15분) — 듣고 쓰기 15문제',go:{m:'det',dm:'dict'}},
+    {id:'l_s2',label:'🍱 점심② (15분) — 말하기 연습 2회',go:{m:'det',dm:'speak'}},
+    {id:'l_rev',label:'🍱 점심③ (20분) — 어제 모의테스트에서 약했던 유형 집중 연습',go:{m:'det',dm:'dict'}},
+    {id:'c2_d',label:'🚇 퇴근① (30분) — 듣고 쓰기 20문제',go:{m:'det',dm:'dict'}},
+    {id:'c2_t',label:'🚇 퇴근② (30분) — 뜻 보고 쓰기 20문제',go:{m:'det',dm:'type'}},
+    {id:'e_w1',label:'🌙 저녁① (10분) — 쓰기 연습 1회',go:{m:'det',dm:'write'}},
+    {id:'e_q30',label:'🌙 저녁② (20분) — 퀴즈 40문제',go:{m:'quiz'}},
+    {id:'e_f30',label:'🌙 저녁③ (30분) — 미암기 플래시카드 몰아서 소진',go:{m:'card',scope:'unknown'}},
+  ];
+}
+function planPct(ds){ const ts=tasksFor(ds); if(!ts.length) return 0; const c=plan[ds]||{}; return Math.round(ts.filter(t=>c[t.id]).length/ts.length*100); }
+function planCheck(taskId){
+  const td=today(); const ts=tasksFor(td);
+  if(ts.some(t=>t.id===taskId)){ (plan[td]=plan[td]||{})[taskId]=true; persistPlan(); }
+}
+// 말하기/쓰기 세션 누적 → 횟수 충족 시 해당 항목 자동 체크
+const PLAN_REQ={ 'l_s2':{t:'sp',n:2}, 'l_s1':{t:'sp',n:1}, 's1':{t:'sp',n:1}, 'e_w1':{t:'wr',n:1}, 'w1':{t:'wr',n:1} };
+function planProgress(type){
+  const td=today(); const rec=(plan[td]=plan[td]||{});
+  const key='_'+type; rec[key]=(rec[key]||0)+1;
+  for(const t of tasksFor(td)){
+    const rq=PLAN_REQ[t.id];
+    if(rq && rq.t===type && rec[key]>=rq.n) rec[t.id]=true;
+  }
+  persistPlan();
+}
+function goto(g){
+  if(!g) return;
+  if(g.scope) scope=g.scope;
+  if(g.dm) detM=g.dm;
+  const tb=$$('.tab').find(t=>t.dataset.mode===g.m); if(tb) tb.click();
+  if(g.dm){ $$('#detMode button').forEach(x=>x.classList.toggle('on',x.dataset.dm===g.dm)); renderDet(); }
+  if(g.scope){ $$('#cardScope button').forEach(b=>b.classList.toggle('on',b.dataset.scope===g.scope)); }
+}
+function renderPlan(){
+  if(!planDate) planDate=today();
+  const ds=planDate, ts=tasksFor(ds), c=plan[ds]||{};
+  const done=ts.filter(t=>c[t.id]).length, pct=ts.length?Math.round(done/ts.length*100):0;
+  const dd=Math.ceil((new Date(TEST_DAY)-new Date(today()))/86400000);
+  const phase = ds<'2026-07-01'?'1단계 · 어휘 집중기' : ds<'2026-07-14'?'2단계 · 말하기/쓰기 병행' : ds<TEST_DAY?'3단계 · 실전 모의':'';
+  const ddTxt = dd>0? 'D-'+dd : dd===0? 'D-DAY!' : '시험 종료';
+  let html='<div class="plan-head">'+
+    '<span class="plan-date">'+dLabel(ds)+(ds===today()?' · 오늘':'')+'</span>'+
+    '<span class="dday">DET '+ddTxt+'</span>'+
+    (phase?'<span class="phase">'+phase+'</span>':'')+
+    '<span class="plan-nav">'+
+      '<button class="pnav" id="pPrev">‹ 어제</button>'+
+      '<button class="pnav" id="pToday">오늘</button>'+
+      '<button class="pnav" id="pNext">내일 ›</button>'+
+    '</span></div>';
+  html+='<div class="pbar"><i style="width:'+pct+'%"></i></div>';
+  html+='<div class="ptext">'+done+' / '+ts.length+' 완료'+(pct===100?' — 오늘 목표 달성! 🎉':'')+'</div>';
+  for(const t of ts){
+    const on=!!c[t.id];
+    html+='<div class="task'+(on?' done':'')+'">'+
+      '<input type="checkbox" class="ck" data-t="'+t.id+'" '+(on?'checked':'')+'>'+
+      '<span class="tl">'+t.label+'</span>'+
+      (t.go?'<button class="go" data-t="'+t.id+'">바로가기 →</button>':'')+
+      '</div>';
+  }
+  html+='<div class="week">';
+  for(let i=6;i>=0;i--){
+    const d2=dShift(today(),-i), p=planPct(d2);
+    const cls=p>=100?'full':p>0?'part':'zero';
+    html+='<div class="day'+(d2===ds?' today':'')+'" data-d="'+d2+'"><div class="dl">'+dLabel(d2).replace(/\d+월 /,'')+'</div><div class="dp '+cls+'">'+(p>0?p+'%':'·')+'</div></div>';
+  }
+  html+='</div>';
+  $('#view-plan').innerHTML=html;
+  $('#pPrev').onclick=()=>{planDate=dShift(planDate,-1);renderPlan();};
+  $('#pNext').onclick=()=>{planDate=dShift(planDate,1);renderPlan();};
+  $('#pToday').onclick=()=>{planDate=today();renderPlan();};
+  $$('#view-plan .ck').forEach(cb=>cb.onchange=()=>{ (plan[ds]=plan[ds]||{})[cb.dataset.t]=cb.checked; if(!cb.checked) delete plan[ds][cb.dataset.t]; persistPlan(); renderPlan(); });
+  $$('#view-plan .go').forEach(b=>b.onclick=()=>{ const t=ts.find(x=>x.id===b.dataset.t); goto(t&&t.go); });
+  $$('#view-plan .day').forEach(d=>d.onclick=()=>{ planDate=d.dataset.d; renderPlan(); });
+}
+
+// ===== 말하기 / 쓰기 연습 =====
+const SPEAK_TOPICS=[
+ 'Describe your hometown. — 당신의 고향을 묘사해 보세요',
+ 'Talk about a person you admire and why. — 존경하는 사람과 그 이유',
+ 'Describe your typical workday. — 평범한 근무일 하루를 설명',
+ 'What do you usually do on weekends? — 주말에 보통 무엇을 하나요',
+ 'Describe a place you want to visit. — 가보고 싶은 곳',
+ 'Talk about your favorite food and why you like it. — 가장 좋아하는 음식',
+ 'Do you prefer working alone or in a team? Why? — 혼자 vs 팀, 이유',
+ 'Describe a memorable trip you took. — 기억에 남는 여행',
+ 'What skill do you want to learn and why? — 배우고 싶은 기술',
+ 'Is technology making our lives better? — 기술은 삶을 더 낫게 하는가',
+ 'Describe your morning routine. — 아침 루틴 설명',
+ 'Talk about a book or movie you enjoyed recently. — 최근 즐긴 책/영화',
+ 'Should students wear school uniforms? — 교복 착용 찬반',
+ 'Describe the area where you live. — 사는 동네 묘사',
+ 'What is the best way to stay healthy? — 건강 유지 방법',
+ 'Talk about a goal you are working toward. — 노력 중인 목표',
+ 'Do you prefer city life or country life? — 도시 vs 시골',
+ 'Describe a useful app on your phone. — 유용한 앱 소개',
+ 'What makes a good leader? — 좋은 리더의 조건',
+ 'Talk about a tradition in your country. — 우리나라의 전통 하나',
+];
+const WRITE_TOPICS=[
+ 'Some people prefer to shop online, others in stores. Which do you prefer and why? — 온라인 vs 매장 쇼핑',
+ 'Describe a challenge you faced and how you handled it. — 겪었던 어려움과 해결',
+ 'Is it better to have a few close friends or many acquaintances? — 소수의 친한 친구 vs 많은 지인',
+ 'What is one thing you would change about your city? — 우리 도시에서 바꾸고 싶은 것',
+ 'Do you think remote work is good for companies? — 재택근무 찬반',
+ 'Describe a person who influenced your life. — 내 삶에 영향을 준 사람',
+ 'Should children learn a second language early? — 조기 외국어 교육 찬반',
+ 'What is your favorite season and why? — 좋아하는 계절',
+ 'Is social media good or bad for society? — 소셜미디어의 영향',
+ 'Describe your ideal vacation. — 이상적인 휴가',
+ 'What job would you do if money did not matter? — 돈이 문제없다면 할 일',
+ 'Do you prefer planning ahead or being spontaneous? — 계획형 vs 즉흥형',
+ 'What is one habit you want to build? — 만들고 싶은 습관',
+ 'Should public transportation be free? — 대중교통 무료화 찬반',
+ 'Describe a meal you know how to cook. — 만들 줄 아는 요리',
+ 'Is it important to follow the news every day? — 매일 뉴스를 봐야 하는가',
+];
+let detTimer=null, recRec=null, recChunks=[], recURL=null;
+function stopDetTimer(){ if(detTimer){clearInterval(detTimer);detTimer=null;} if(recRec&&recRec.state!=='inactive'){try{recRec.stop();}catch(e){}} }
+function beep(){ try{ const ctx=new (window.AudioContext||window.webkitAudioContext)(); const o=ctx.createOscillator(),g=ctx.createGain(); o.connect(g); g.connect(ctx.destination); o.frequency.value=880; g.gain.value=.12; o.start(); setTimeout(()=>{o.stop();ctx.close();},220);}catch(e){} }
+
+function detSpeak(){
+  stopDetTimer();
+  const topic=rnd(SPEAK_TOPICS);
+  const a=$('#detArea');
+  const canRec = !!(navigator.mediaDevices&&window.MediaRecorder);
+  a.innerHTML='<div class="hint">DET 말하기 — 준비 30초 후 90초간 말하세요. 틀: 의견 → 이유 2개 → 예시 → 마무리</div>'+
+    '<div class="topic" id="spTopic">'+esc(topic)+'</div>'+
+    '<div class="tphase" id="spPhase">준비되면 시작을 누르세요</div>'+
+    '<div class="timerbox" id="spTime">0:30</div>'+
+    '<div class="controls">'+
+      '<button class="btn" id="spStart">▶ 시작</button>'+
+      '<button class="btn ghost" id="spNew">🔁 새 주제</button>'+
+      (canRec?'<button class="btn ghost" id="spRec">🎙 녹음: 꺼짐</button>':'')+
+    '</div>'+
+    '<div class="fb" id="spFb"></div><div id="spAudio"></div>';
+  let recOn=false;
+  if(canRec) $('#spRec').onclick=()=>{ recOn=!recOn; $('#spRec').textContent='🎙 녹음: '+(recOn?'켜짐':'꺼짐'); };
+  $('#spNew').onclick=()=>detSpeak();
+  $('#spStart').onclick=async()=>{
+    $('#spStart').disabled=true;
+    if(recOn){ try{ const st=await navigator.mediaDevices.getUserMedia({audio:true}); recChunks=[]; recRec=new MediaRecorder(st); recRec.ondataavailable=e=>recChunks.push(e.data); recRec.onstop=()=>{ st.getTracks().forEach(t=>t.stop()); const b=new Blob(recChunks,{type:'audio/webm'}); if(recURL) URL.revokeObjectURL(recURL); recURL=URL.createObjectURL(b); $('#spAudio').innerHTML='<audio controls src="'+recURL+'" style="margin-top:8px"></audio>'; }; }catch(e){ recOn=false; $('#spFb').innerHTML='<span class="no">마이크 권한이 없어 녹음 없이 진행해요</span>'; } }
+    let t=30, speaking=false;
+    $('#spPhase').textContent='🧠 준비 시간 — 무엇을 말할지 구상하세요';
+    const tick=()=>{
+      const m=Math.floor(t/60), s=String(t%60).padStart(2,'0');
+      const tb=$('#spTime'); tb.textContent=m+':'+s; tb.classList.toggle('warn', speaking&&t<=10);
+      if(t===0){
+        if(!speaking){ speaking=true; t=90; beep(); $('#spPhase').textContent='🎙 말하기! 90초 — 의견→이유 2개→예시'; if(recOn&&recRec) try{recRec.start();}catch(e){} }
+        else { clearInterval(detTimer); detTimer=null; beep(); $('#spPhase').textContent='⏹ 종료!'; $('#spFb').innerHTML='<span class="ok">수고했어요! ✓ 오늘 학습에 기록됨</span>'; if(recRec&&recRec.state!=='inactive') try{recRec.stop();}catch(e){} planProgress('sp'); detBump(); return; }
+      }
+      t--;
+    };
+    tick(); detTimer=setInterval(tick,1000);
+  };
+}
+
+function detWrite(){
+  stopDetTimer();
+  const topic=rnd(WRITE_TOPICS);
+  const a=$('#detArea');
+  a.innerHTML='<div class="hint">DET 쓰기 — 5분 안에 50단어 이상. 틀: 입장 1문장 → 이유+예시 2~3문장 → 마무리 1문장</div>'+
+    '<div class="topic">'+esc(topic)+'</div>'+
+    '<div class="controls"><span class="tphase" id="wrPhase"></span><span class="timerbox" id="wrTime" style="font-size:26px">5:00</span><button class="btn ghost" id="wrTimer">⏱ 타이머 시작</button><button class="btn ghost" id="wrNew">🔁 새 주제</button></div>'+
+    '<textarea class="ta" id="wrTa" placeholder="여기에 영어로 작성하세요..."></textarea>'+
+    '<div class="wc" id="wrWc">0 단어 / 목표 <b>50+</b></div>'+
+    '<div class="controls"><button class="btn" id="wrDone">완료</button></div>'+
+    '<div class="fb" id="wrFb"></div>';
+  const ta=$('#wrTa');
+  const wc=()=>{ const n=(ta.value.trim().match(/[A-Za-z']+/g)||[]).length; $('#wrWc').innerHTML=n+' 단어 / 목표 <b>50+</b>'; return n; };
+  ta.addEventListener('input',wc);
+  $('#wrNew').onclick=()=>detWrite();
+  $('#wrTimer').onclick=()=>{
+    if(detTimer) return;
+    let t=300; $('#wrTimer').disabled=true; ta.focus();
+    const tick=()=>{ const m=Math.floor(t/60), s=String(t%60).padStart(2,'0'); const tb=$('#wrTime'); tb.textContent=m+':'+s; tb.classList.toggle('warn',t<=30); if(t===0){ clearInterval(detTimer); detTimer=null; beep(); $('#wrPhase').textContent='⏹ 시간 종료'; return; } t--; };
+    tick(); detTimer=setInterval(tick,1000);
+  };
+  $('#wrDone').onclick=()=>{
+    const n=wc();
+    if(n>=50){ $('#wrFb').innerHTML='<span class="ok">'+n+'단어 완성! ✓ 오늘 학습에 기록됨</span>'; planProgress('wr'); detBump(); stopDetTimer(); }
+    else { $('#wrFb').innerHTML='<span class="no">'+n+'단어 — 50단어 이상을 채워보세요 (이유나 예시를 한 문장 더!)</span>'; }
+  };
+}
 
 render();
 </script>

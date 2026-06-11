@@ -138,6 +138,38 @@ h1 em{font-style:italic;font-weight:400}
 .wc{font-family:var(--sans);font-size:13px;color:var(--muted)}
 .wc b{color:var(--brand)}
 .topic{font-family:var(--kr);font-size:clamp(16px,4vw,20px);font-weight:600;text-align:center;line-height:1.6;max-width:560px;background:var(--card);border:1.5px solid var(--line2);border-radius:13px;padding:16px 18px}
+.vumeter{width:min(300px,80vw);height:8px;background:var(--paper2);border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.vumeter i{display:block;height:100%;width:0;background:var(--a1);transition:width .15s}
+.cklist{display:flex;flex-direction:column;gap:7px;max-width:560px;width:100%;font-family:var(--kr);font-size:13.5px}
+.cki{display:flex;gap:9px;align-items:flex-start;background:var(--card);border:1.4px solid var(--line2);border-radius:10px;padding:9px 12px;line-height:1.5}
+.cki.y{border-color:#cfe0cf;background:#eef3ec}
+.cki.n{border-color:#ecd6d2}
+.cki .ic{font-weight:800}
+.cki.y .ic{color:#1d5e36}.cki.n .ic{color:#8a2a25}
+.scorebox{margin-top:26px;padding-top:18px;border-top:1.5px dashed var(--line)}
+.scorebox h3{font-family:var(--kr);font-size:15px;font-weight:700;color:var(--ink);margin:0 0 10px}
+.scorerow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.scoreinp{font-family:var(--kr);font-size:14px;padding:8px 12px;border:1.4px solid var(--line2);border-radius:9px;background:var(--card);color:var(--ink);outline:none;width:120px}
+.scoreinp:focus{border-color:var(--brand)}
+.schart{width:100%;max-width:560px;background:var(--card);border:1.5px solid var(--line2);border-radius:13px;padding:10px}
+.slist{font-family:var(--kr);font-size:13px;color:var(--muted);margin-top:8px;display:flex;flex-wrap:wrap;gap:8px}
+.slist .si{background:var(--card);border:1.3px solid var(--line2);border-radius:999px;padding:4px 11px;display:inline-flex;gap:7px;align-items:center}
+.slist .sx{cursor:pointer;color:var(--c1);font-weight:800}
+.excats{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:560px}
+.excat{font-family:var(--kr);font-size:12.5px;font-weight:600;border:1.3px solid var(--line2);background:var(--card);color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer}
+.excat.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.excard{width:100%;max-width:560px;background:var(--card);border:1.5px solid var(--line2);border-radius:15px;padding:20px;text-align:center}
+.excard .ecat{font-family:var(--kr);font-size:11px;font-weight:700;color:#fff;background:var(--brand);border-radius:999px;padding:3px 10px;display:inline-block;margin-bottom:10px}
+.excard .ep{font-family:var(--serif);font-weight:700;font-size:clamp(19px,4.5vw,25px);line-height:1.35;letter-spacing:-.01em}
+.excard .ek{font-family:var(--kr);font-size:14px;color:var(--muted);margin-top:7px}
+.excard .eex{font-family:var(--kr);font-size:14px;color:var(--ink);background:var(--paper2);border-radius:10px;padding:11px 13px;margin-top:13px;line-height:1.6;cursor:pointer}
+.excard .eex:hover{outline:1.4px solid var(--brand)}
+.exnum{font-family:var(--sans);font-size:12px;color:var(--faint)}
+.modelbox{background:#f6f1e2;border:1.5px solid var(--line2);border-radius:13px;padding:14px 16px;margin-top:4px;text-align:left}
+.mhead{font-family:var(--kr);font-weight:700;font-size:13.5px;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mtext{font-family:var(--serif);font-size:15.5px;line-height:1.8;color:var(--ink);margin-top:9px}
+.mtext .hl{background:#f3e0ae;border-radius:4px;padding:0 3px;font-weight:700}
+.mtip{font-family:var(--kr);font-size:12px;color:var(--muted);margin-top:9px;line-height:1.6}
 .more{margin:26px auto 0;display:block;font-family:var(--kr);font-weight:600;background:var(--card);border:1.5px solid var(--ink);color:var(--ink);padding:11px 26px;border-radius:999px;cursor:pointer}
 
 /* FLASHCARD */
@@ -159,7 +191,7 @@ h1 em{font-style:italic;font-weight:400}
 .btn.dont{border-color:var(--c1);color:var(--c1)} .btn.dont:hover{background:var(--c1);color:#fff}
 .btn.ghost{border-color:var(--line2);color:var(--muted)}
 .progress{font-family:var(--sans);font-size:13px;color:var(--muted);letter-spacing:.03em}
-.toggle{display:flex;gap:0;border:1.4px solid var(--line2);border-radius:10px;overflow:hidden}
+.toggle{display:flex;flex-wrap:wrap;gap:0;border:1.4px solid var(--line2);border-radius:10px;overflow:hidden}
 .toggle button{font-family:var(--kr);font-size:13px;font-weight:600;border:0;background:var(--card);color:var(--muted);padding:8px 14px;cursor:pointer}
 .toggle button.on{background:var(--ink);color:var(--paper)}
 
@@ -315,6 +347,7 @@ h1 em{font-style:italic;font-weight:400}
       <button data-dm="type">뜻 보고 쓰기</button>
       <button data-dm="speak">말하기</button>
       <button data-dm="write">쓰기</button>
+      <button data-dm="learn">표현 학습</button>
     </div>
     <div class="score" id="detStat"></div>
   </div>
@@ -571,7 +604,7 @@ function setAuthUI(){
 function schedulePush(){ if(!cloudOn()||!user||syncing) return; clearTimeout(pushTimer); pushTimer=setTimeout(pushCloud,800); }
 async function pushCloud(){
   if(!cloudOn()||!user) return;
-  try{ await sb.from('kv').upsert({user_id:user.id, data:{known:[...known],review:[...review],plan:(typeof plan!=='undefined'?plan:{})}, updated_at:new Date().toISOString()}); }
+  try{ await sb.from('kv').upsert({user_id:user.id, data:{known:[...known],review:[...review],plan:(typeof plan!=='undefined'?plan:{}),scores:(typeof scores!=='undefined'?scores:[])}, updated_at:new Date().toISOString()}); }
   catch(e){ console.warn('push',e); }
 }
 async function pullCloud(){
@@ -585,6 +618,10 @@ async function pullCloud(){
     if(cloud.plan && typeof plan!=='undefined'){
       for(const d in cloud.plan){ plan[d]=Object.assign({}, cloud.plan[d]||{}, plan[d]||{}); }
       try{ localStorage.setItem('oxford5000_plan_v1', JSON.stringify(plan)); }catch(e){}
+    }
+    if(Array.isArray(cloud.scores) && typeof scores!=='undefined'){
+      for(const cs of cloud.scores){ if(!scores.find(x=>x.d===cs.d)) scores.push(cs); }
+      try{ localStorage.setItem('oxford5000_scores_v1', JSON.stringify(scores)); }catch(e){}
     }
     persistLocal(); updateBadge(); render();
   }catch(e){ console.warn('pull',e); }
@@ -606,7 +643,7 @@ function bindBackup(){
   if(exp) exp.onclick=()=>{
     const payload={ app:'oxford5000', version:2, exportedAt:new Date().toISOString(),
                     known:[...known], review:[...review],
-                    plan:(typeof plan!=='undefined'?plan:{}) };
+                    plan:(typeof plan!=='undefined'?plan:{}), scores:(typeof scores!=='undefined'?scores:[]) };
     const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
     const url=URL.createObjectURL(blob);
     const a=document.createElement('a');
@@ -630,6 +667,11 @@ function bindBackup(){
           if(merge){ for(const d in obj.plan){ plan[d]=Object.assign({}, obj.plan[d]||{}, plan[d]||{}); } }
           else { plan=obj.plan||{}; }
           try{ localStorage.setItem('oxford5000_plan_v1', JSON.stringify(plan)); }catch(e){}
+        }
+        if(Array.isArray(obj.scores) && typeof scores!=='undefined'){
+          if(merge){ for(const cs of obj.scores){ if(!scores.find(x=>x.d===cs.d)) scores.push(cs); } }
+          else { scores=obj.scores; }
+          try{ localStorage.setItem('oxford5000_scores_v1', JSON.stringify(scores)); }catch(e){}
         }
         // 암기로 분류된 건 미암기(review)에서 제거
         for(const x of known) review.delete(x);
@@ -691,6 +733,7 @@ function renderDet(){ detStatUI(); detLock=false; if(typeof stopDetTimer==='func
   else if(detM==='real') detReal();
   else if(detM==='speak') detSpeak();
   else if(detM==='write') detWrite();
+  else if(detM==='learn') detLearn();
   else detType();
 }
 
@@ -809,18 +852,21 @@ function tasksFor(ds){
     {id:'l_r8',label:'🍱 점심③ (10분) — 진짜 단어 고르기 8라운드',go:{m:'det',dm:'real'}},
     {id:'c2_d',label:'🚇 퇴근① (30분) — 듣고 쓰기 25문제',go:{m:'det',dm:'dict'}},
     {id:'c2_r',label:'🚇 퇴근② (30분) — 진짜 단어 15라운드 + 오늘 틀린 단어 훑기',go:{m:'det',dm:'real'}},
-    {id:'e_q40',label:'🌙 저녁① (20분) — 퀴즈 40문제',go:{m:'quiz'}},
-    {id:'e_t15',label:'🌙 저녁② (15분) — 뜻 보고 쓰기 15문제 (철자까지 정확히)',go:{m:'det',dm:'type'}},
-    {id:'e_f40',label:'🌙 저녁③ (20분) — 새 단어 플래시카드 40장',go:{m:'card',scope:'unknown'}},
-    {id:'e_w5',label:'🌙 저녁④ (5분) — 오늘 틀린 단어 미암기 탭에서 훑고 마무리',go:{m:'unknown'}},
+    {id:'e_x3',label:'🌙 저녁① (5분) — 표현 학습 3개 (따라 말하기까지)',go:{m:'det',dm:'learn'}},
+    {id:'e_s1',label:'🌙 저녁② (10분) — 말하기 연습 1회 (방금 배운 표현 써먹기!)',go:{m:'det',dm:'speak'}},
+    {id:'e_q40',label:'🌙 저녁③ (17분) — 퀴즈 35문제',go:{m:'quiz'}},
+    {id:'e_t15',label:'🌙 저녁④ (12분) — 뜻 보고 쓰기 15문제 (철자까지 정확히)',go:{m:'det',dm:'type'}},
+    {id:'e_f40',label:'🌙 저녁⑤ (13분) — 새 단어 플래시카드 25장',go:{m:'card',scope:'unknown'}},
+    {id:'e_w5',label:'🌙 저녁⑥ (3분) — 오늘 틀린 단어 미암기 탭에서 훑고 마무리',go:{m:'unknown'}},
   ];
   if(ds<'2026-07-14') return [ // 2단계: 어휘 유지 + 말하기/쓰기
     {id:'m15',label:'🌅 아침 10분 — 미암기 플래시카드 15장',go:{m:'card',scope:'unknown'}},
     {id:'c1_f',label:'🚇 출근① (30분) — 플래시카드 "미암기만" 50장',go:{m:'card',scope:'unknown'}},
     {id:'c1_q',label:'🚇 출근② (30분) — 퀴즈 40문제',go:{m:'quiz'}},
     {id:'l_d15',label:'🍱 점심① (15분) — 듣고 쓰기 15문제',go:{m:'det',dm:'dict'}},
-    {id:'l_s2',label:'🍱 점심② (15분) — 말하기 연습 2회 (준비30초+말하기90초)',go:{m:'det',dm:'speak'}},
-    {id:'l_f25',label:'🍱 점심③ (25분) — 플래시카드 미암기 30장 + 진짜 단어 3라운드',go:{m:'card',scope:'unknown'}},
+    {id:'l_x3',label:'🍱 점심② (5분) — 표현 학습 3개 복습',go:{m:'det',dm:'learn'}},
+    {id:'l_s2',label:'🍱 점심③ (15분) — 말하기 연습 2회 (배운 표현 활용)',go:{m:'det',dm:'speak'}},
+    {id:'l_f25',label:'🍱 점심④ (20분) — 플래시카드 미암기 25장 + 진짜 단어 3라운드',go:{m:'card',scope:'unknown'}},
     {id:'c2_d',label:'🚇 퇴근① (30분) — 듣고 쓰기 20문제',go:{m:'det',dm:'dict'}},
     {id:'c2_r',label:'🚇 퇴근② (30분) — 진짜 단어 10라운드 + 오늘 틀린 단어 복습',go:{m:'det',dm:'real'}},
     {id:'e_w1',label:'🌙 저녁① (10분) — 쓰기 연습 1회 (5분 타이머, 50단어+)',go:{m:'det',dm:'write'}},
@@ -858,7 +904,7 @@ function planCheck(taskId){
   if(ts.some(t=>t.id===taskId)){ (plan[td]=plan[td]||{})[taskId]=true; persistPlan(); }
 }
 // 말하기/쓰기 세션 누적 → 횟수 충족 시 해당 항목 자동 체크
-const PLAN_REQ={ 'l_s2':{t:'sp',n:2}, 'l_s1':{t:'sp',n:1}, 's1':{t:'sp',n:1}, 'e_w1':{t:'wr',n:1}, 'w1':{t:'wr',n:1} };
+const PLAN_REQ={ 'l_s2':{t:'sp',n:2}, 'l_s1':{t:'sp',n:1}, 's1':{t:'sp',n:1}, 'e_s1':{t:'sp',n:1}, 'e_w1':{t:'wr',n:1}, 'w1':{t:'wr',n:1} };
 function planProgress(type){
   const td=today(); const rec=(plan[td]=plan[td]||{});
   const key='_'+type; rec[key]=(rec[key]||0)+1;
@@ -876,6 +922,55 @@ function goto(g){
   if(g.dm){ $$('#detMode button').forEach(x=>x.classList.toggle('on',x.dataset.dm===g.dm)); renderDet(); }
   if(g.scope){ $$('#cardScope button').forEach(b=>b.classList.toggle('on',b.dataset.scope===g.scope)); }
 }
+// 연습 테스트 점수 기록
+const SKEY='oxford5000_scores_v1';
+let scores=[]; // [{d:'YYYY-MM-DD', s:number}]
+try{ const s=localStorage.getItem(SKEY); if(s) scores=JSON.parse(s)||[]; }catch(e){}
+function persistScores(){ try{ localStorage.setItem(SKEY, JSON.stringify(scores)); }catch(e){} schedulePush(); }
+function scoreChartSVG(){
+  if(!scores.length) return '<div style="font-family:var(--kr);font-size:13px;color:var(--faint);text-align:center;padding:18px 0">아직 기록이 없어요 — 연습 테스트를 보면 점수를 기록해 보세요</div>';
+  const ss=[...scores].sort((a,b)=>a.d<b.d?-1:1);
+  const W=540,H=190,P=30;
+  const lo=Math.min(60,...ss.map(x=>x.s))-5, hi=Math.max(130,...ss.map(x=>x.s))+5;
+  const X=i=> ss.length===1? W/2 : P+(W-2*P)*i/(ss.length-1);
+  const Y=v=> H-P-(H-2*P)*(v-lo)/(hi-lo);
+  let svg='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto">';
+  // 목표선 120
+  svg+='<line x1="'+P+'" y1="'+Y(120)+'" x2="'+(W-P)+'" y2="'+Y(120)+'" stroke="#b23b3b" stroke-dasharray="5,4" stroke-width="1.4"/>';
+  svg+='<text x="'+(W-P)+'" y="'+(Y(120)-6)+'" text-anchor="end" font-size="11" fill="#b23b3b" font-weight="700">목표 120</text>';
+  // 선
+  if(ss.length>1){ svg+='<polyline fill="none" stroke="#2e7d4f" stroke-width="2.4" points="'+ss.map((x,i)=>X(i)+','+Y(x.s)).join(' ')+'"/>'; }
+  // 점 + 라벨
+  ss.forEach((x,i)=>{
+    svg+='<circle cx="'+X(i)+'" cy="'+Y(x.s)+'" r="4.5" fill="#2e7d4f"/>';
+    svg+='<text x="'+X(i)+'" y="'+(Y(x.s)-9)+'" text-anchor="middle" font-size="12" font-weight="800" fill="#231f18">'+x.s+'</text>';
+    svg+='<text x="'+X(i)+'" y="'+(H-9)+'" text-anchor="middle" font-size="10" fill="#9a9079">'+x.d.slice(5).replace('-','/')+'</text>';
+  });
+  svg+='</svg>';
+  return svg;
+}
+function scoreSection(){
+  let html='<div class="scorebox"><h3>📈 연습 테스트 점수 추이</h3>';
+  html+='<div class="scorerow"><input type="date" class="scoreinp" id="scD" value="'+today()+'"><input type="number" class="scoreinp" id="scS" placeholder="점수 (10~160)" min="10" max="160"><button class="pnav" id="scAdd">기록 추가</button></div>';
+  html+='<div class="schart">'+scoreChartSVG()+'</div>';
+  if(scores.length){
+    html+='<div class="slist">'+[...scores].sort((a,b)=>a.d<b.d?-1:1).map((x,i)=>'<span class="si">'+x.d.slice(5).replace('-','/')+' · <b>'+x.s+'</b><span class="sx" data-i="'+scores.indexOf(x)+'" title="삭제">×</span></span>').join('')+'</div>';
+  }
+  html+='</div>';
+  return html;
+}
+function bindScore(){
+  const add=document.getElementById('scAdd'); if(!add) return;
+  add.onclick=()=>{
+    const d=document.getElementById('scD').value, s=+document.getElementById('scS').value;
+    if(!d || !s || s<10 || s>160){ alert('날짜와 점수(10~160)를 확인해 주세요'); return; }
+    const ex=scores.find(x=>x.d===d);
+    if(ex) ex.s=s; else scores.push({d,s});
+    persistScores(); renderPlan();
+  };
+  $$('#view-plan .sx').forEach(x=>x.onclick=()=>{ scores.splice(+x.dataset.i,1); persistScores(); renderPlan(); });
+}
+
 function renderPlan(){
   if(!planDate) planDate=today();
   const ds=planDate, ts=tasksFor(ds), c=plan[ds]||{};
@@ -909,7 +1004,9 @@ function renderPlan(){
     html+='<div class="day'+(d2===ds?' today':'')+'" data-d="'+d2+'"><div class="dl">'+dLabel(d2).replace(/\d+월 /,'')+'</div><div class="dp '+cls+'">'+(p>0?p+'%':'·')+'</div></div>';
   }
   html+='</div>';
+  html+=scoreSection();
   $('#view-plan').innerHTML=html;
+  bindScore();
   $('#pPrev').onclick=()=>{planDate=dShift(planDate,-1);renderPlan();};
   $('#pNext').onclick=()=>{planDate=dShift(planDate,1);renderPlan();};
   $('#pToday').onclick=()=>{planDate=today();renderPlan();};
@@ -959,39 +1056,206 @@ const WRITE_TOPICS=[
  'Describe a meal you know how to cook. — 만들 줄 아는 요리',
  'Is it important to follow the news every day? — 매일 뉴스를 봐야 하는가',
 ];
+const SPEAK_MODELS=[
+"In my opinion, my hometown is a wonderful place to live. I grew up in a small city near the mountains, and the air is always clean. The main reason I love it is that people are friendly and everything is close. For example, I could walk to school, the market, and the river in ten minutes. However, there are not many jobs, which is why many young people move away. Overall, it is quiet, safe, and full of good memories.",
+"I would say the person I admire most is my mother. The main reason is that she never gives up, even in difficult situations. For example, she raised three children while working full time, and she always stayed positive. In addition, she taught me to be honest and to treat people with respect. Even though she is busy, she still finds time to help others. That is why I think she is the strongest person I know.",
+"Let me describe my typical workday. I usually wake up at seven and check my schedule on the subway. In the morning, I answer emails and attend meetings with my team. For example, we share our progress and plan the next tasks. After lunch, I focus on my main projects because the office is quieter. However, some days are stressful when deadlines are close. Overall, my workday is busy but satisfying, and I learn something new almost every day.",
+"On weekends, I usually try to balance rest and personal growth. On Saturday mornings, I clean my apartment and do laundry. After that, I often meet my friends for lunch or coffee. For example, last weekend we tried a new restaurant near the river. On Sundays, I prefer to stay home, watch movies, and prepare for the next week. In addition, I study English for about an hour. Overall, weekends help me recharge my energy.",
+"The place I really want to visit is Switzerland. The main reason is that I love mountains and beautiful natural scenery. For example, I want to take the train through the Alps and see the lakes. In addition, I am curious about the local culture and food, such as cheese and chocolate. Even though it is expensive, I believe the experience would be worth the money. That is why Switzerland is at the top of my travel list.",
+"My favorite food is Korean fried chicken. The main reason is that it is crispy outside and juicy inside. For example, I usually order it with friends on Friday nights, and it always makes the evening better. In addition, there are many flavors, such as soy sauce, garlic, and spicy. However, I try not to eat it too often because it is not very healthy. Overall, it is my number one comfort food.",
+"I would say it depends, but I generally prefer working in a team. The main reason is that teammates bring different ideas and skills. For example, when I face a problem, my colleagues often suggest solutions I never thought of. In addition, sharing tasks reduces stress and saves time. However, I prefer working alone when I need deep focus. Overall, teamwork produces better results for big projects, which is why I choose it.",
+"The most memorable trip I took was to Jeju Island with my family. The main reason it was special is that it was our first trip together in years. For example, we climbed a volcano, ate fresh seafood, and watched the sunrise by the sea. Even though it rained on the last day, we still enjoyed walking along the beach. That is why I still remember that trip whenever I see photos of the ocean.",
+"The skill I want to learn most is video editing. The main reason is that video content is becoming more important in my work. For example, short videos get much more attention than long documents these days. In addition, editing would let me share my ideas in a creative way. Even though learning new software takes time, I plan to practice a little every weekend. Overall, I believe this skill will open new opportunities for me.",
+"In my opinion, technology is definitely making our lives better. The main reason is that it saves time and connects people. For example, I can talk to my family anytime, order food in one minute, and work from home. However, there are also problems, such as smartphone addiction and less face-to-face communication. Even though these issues exist, the benefits are much greater. That is why I believe we should use technology wisely instead of avoiding it.",
+"Let me describe my morning routine. I usually wake up at six thirty and drink a glass of water first. After that, I stretch for ten minutes and check the news. For example, I read headlines while eating a simple breakfast like toast and eggs. Then I review my schedule and leave home around eight. Even though mornings are busy, this routine keeps me calm. Overall, a steady morning is the secret to a productive day.",
+"I recently enjoyed a movie about space exploration. The main reason I liked it was the relationship between the father and his daughter. For example, even though they were far apart, their love connected them across time. In addition, the music and the images were absolutely beautiful. It made me think about family and how short life is. That is why I recommended it to all my friends, and I want to watch it again.",
+"In my opinion, school uniforms have more advantages than disadvantages. The main reason is that they save time and reduce stress every morning. For example, students do not need to worry about choosing clothes or comparing brands. In addition, uniforms create a sense of belonging. However, some people argue that uniforms limit freedom of expression. Even though that is partly true, I believe simple rules help students focus on studying. Overall, I support school uniforms.",
+"I live in a quiet neighborhood near the edge of the city. In this area, there are many small cafes, a traditional market, and a beautiful park. For example, I often walk along the stream in the evening to relax. The main reason I like it is that it is peaceful but still close to everything. However, rents are rising these days. Overall, it is a comfortable place that fits my lifestyle well.",
+"I would say the best way to stay healthy is building small daily habits. The main reason is that big changes are hard to continue. For example, I take the stairs, walk after lunch, and try to sleep before midnight. In addition, drinking enough water and reducing late-night snacks make a big difference. Even though exercise at a gym is helpful, consistency matters more than intensity. Overall, health comes from what we repeat every day.",
+"The goal I am working toward right now is improving my English. The main reason is that I want more opportunities in my career and in travel. For example, I study vocabulary every day on my phone and practice speaking at night. Even though progress feels slow sometimes, I can see small improvements every week. In addition, this goal gives my daily life a clear direction. That is why I keep studying even when I am tired.",
+"I prefer city life, although I understand the charm of the countryside. The main reason is convenience. For example, in a city I can find hospitals, restaurants, and transportation within minutes. In addition, there are more jobs and cultural events. On the other hand, the countryside offers clean air and a slower pace. Even though I sometimes miss nature, my career and lifestyle fit the city better. That is why I choose city life.",
+"The most useful app on my phone is my calendar app. The main reason is that it organizes my whole life in one place. For example, it reminds me of meetings, birthdays, and even small tasks like paying bills. In addition, I can share schedules with my team, which prevents confusion. Even though it looks simple, it saves me from forgetting important things. Overall, I would feel lost without it.",
+"In my opinion, a good leader is someone who listens first. The main reason is that team members work harder when they feel respected. For example, my former manager always asked for our opinions before making decisions, and our team trusted her completely. In addition, a good leader takes responsibility instead of blaming others. Even though strong decisions are important, empathy builds stronger teams. That is why I believe listening is the core of leadership.",
+"One important tradition in my country is celebrating the Lunar New Year. During this holiday, families gather, share traditional food, and honor their elders. For example, younger people bow to their grandparents and receive wise words and small gifts. The main reason this tradition matters is that it keeps families connected across generations. Even though lifestyles are changing, most people still travel home every year. Overall, it shows the value of family in our culture."
+];
+const WRITE_MODELS=[
+"I prefer shopping online because it is fast and convenient. The main reason is that I can compare prices and read reviews in minutes. For example, I recently bought a laptop online and saved both time and money. However, I still visit stores for clothes because sizes vary. Overall, online shopping fits my busy lifestyle better.",
+"Last year, I faced a difficult challenge at work when our team lost an important client. At first, I felt stressed and disappointed. However, I analyzed the problem, asked for feedback, and improved our service plan. For example, we created faster response systems for customers. In conclusion, that experience taught me that problems are chances to grow.",
+"In my opinion, having a few close friends is better than having many acquaintances. The main reason is that deep relationships provide real support. For example, when I was sick last year, my best friend visited me every day. However, acquaintances usually disappear in hard times. Therefore, I value quality over quantity in friendship.",
+"If I could change one thing about my city, I would add more green parks. The main reason is that people need places to rest from their busy lives. For example, my neighborhood has only one small park, and it is always crowded. In addition, trees improve air quality. Overall, more parks would make citizens healthier and happier.",
+"I believe remote work is good for companies. The main reason is that employees save commuting time and focus better. For example, my team finished projects faster when we worked from home. However, communication can become slower, so companies need clear online systems. In conclusion, remote work brings benefits when it is managed well.",
+"The person who influenced my life most is my high school teacher. The main reason is that she believed in me when I doubted myself. For example, she encouraged me to join a speech contest, and that experience built my confidence. Even though many years have passed, I still remember her advice. In conclusion, one supportive person can change someone's future.",
+"In my opinion, children should learn a second language early. The main reason is that young brains absorb languages naturally. For example, my cousin started English at five and now speaks without fear. In addition, early learning builds cultural understanding. However, it should be fun, not stressful. Overall, early language education is a valuable gift.",
+"My favorite season is autumn. The main reason is that the weather is cool and perfect for walking. For example, I love seeing the red and yellow leaves along the streets in October. In addition, autumn has many holidays, so I can spend time with my family. Overall, autumn makes me feel calm and thankful.",
+"In my opinion, social media has both good and bad sides, but the benefits are greater. The main reason is that it connects people and spreads information quickly. For example, small businesses can reach customers without big budgets. However, fake news and addiction are serious problems. Therefore, we need to use social media carefully and check facts.",
+"My ideal vacation is two weeks on a quiet beach. The main reason is that I want to escape from noise and schedules. For example, I would swim in the morning, read books in the afternoon, and watch the sunset every evening. In addition, I would try local food with my family. Overall, rest and good food make a perfect holiday.",
+"If money did not matter, I would work as a travel writer. The main reason is that I love both writing and exploring new places. For example, I would visit small villages, talk with local people, and share their stories online. In addition, this job would teach me about different cultures. In conclusion, I believe meaningful work is about passion, not salary.",
+"I prefer planning ahead rather than being spontaneous. The main reason is that plans reduce stress and save time. For example, when I plan my week on Sunday, I finish tasks faster and sleep better. However, too much planning can make life boring, so I leave some free time. Overall, a flexible plan works best for me.",
+"One habit I want to build is reading for thirty minutes every night. The main reason is that reading improves both knowledge and focus. For example, successful people often say books changed their thinking. However, I usually waste that time on my phone. Therefore, I will keep my phone outside the bedroom. In conclusion, small habits create big changes.",
+"In my opinion, public transportation should not be completely free, but it should be cheaper. The main reason is that free systems need huge taxes and may lower service quality. For example, cities with free buses often struggle with maintenance. However, discounts for students and seniors are necessary. Overall, affordable but well-managed transport is the best solution.",
+"The meal I know how to cook best is kimchi fried rice. First, I fry kimchi with a little oil, and then I add cold rice and soy sauce. For example, I often cook it on busy nights because it takes only ten minutes. In addition, I put a fried egg on top, which makes it perfect. Overall, it is simple, cheap, and delicious.",
+"In my opinion, following the news every day is important, but balance matters. The main reason is that news helps us understand the world and make better decisions. For example, knowing about the economy can protect our money. However, too much negative news increases stress. Therefore, I read the news for ten minutes in the morning, and that is enough."
+];
+const HL_PATTERNS=['in my opinion','i strongly believe','i would say','i believe','i prefer','the main reason( is| it was special is)?','this is because','one reason','which is why','for example','for instance','in my case','however','on the other hand','even though','while some people','in addition','moreover','not only','in conclusion','overall','that is why','to sum up','therefore','i can see','it looks like','in the background','seems to be','let me describe'];
+function hlText(t){
+  let out=esc(t);
+  const re=new RegExp('\\b('+HL_PATTERNS.join('|')+')','gi');
+  return out.replace(re, m=>'<b class="hl">'+m+'</b>');
+}
+function showModel(boxId, text){
+  const box=document.getElementById(boxId); if(!box) return;
+  if(box.innerHTML){ box.innerHTML=''; return; } // 토글
+  const n=(text.match(/[A-Za-z']+/g)||[]).length;
+  box.innerHTML='<div class="modelbox"><div class="mhead">💡 모범 답안 <span class="exnum">('+n+'단어)</span> <button class="pnav" id="'+boxId+'L">🔊 듣기</button></div>'+
+    '<div class="mtext">'+hlText(text)+'</div>'+
+    '<div class="mtip">색칠된 표현이 답의 뼈대예요. 듣기를 누르고 소리 내어 따라 읽어보세요(쉐도잉) — 그다음 같은 주제로 다시 도전!</div></div>';
+  const lb=document.getElementById(boxId+'L'); if(lb) lb.onclick=()=>speak(text);
+  try{ box.scrollIntoView({block:'nearest',behavior:'smooth'}); }catch(e){}
+}
 let detTimer=null, recRec=null, recChunks=[], recURL=null;
-function stopDetTimer(){ if(detTimer){clearInterval(detTimer);detTimer=null;} if(recRec&&recRec.state!=='inactive'){try{recRec.stop();}catch(e){}} }
+let vadTimer=null, vadCtx=null, vadStream=null;
+let srObj=null, srAlive=false;
+function stopSR(){ srAlive=false; try{ if(srObj) srObj.stop(); }catch(e){} srObj=null; }
+function stopVAD(){ if(vadTimer){clearInterval(vadTimer);vadTimer=null;} try{ if(vadCtx){vadCtx.close();vadCtx=null;} }catch(e){} try{ if(vadStream){vadStream.getTracks().forEach(t=>t.stop());vadStream=null;} }catch(e){} }
+function stopDetTimer(){ if(detTimer){clearInterval(detTimer);detTimer=null;} if(recRec&&recRec.state!=='inactive'){try{recRec.stop();}catch(e){}} stopVAD(); stopSR(); }
+
+// ===== 결과물 내용 분석 (어휘 수준 + 구조) =====
+let WORDLV=null;
+function wordLv(w){
+  if(!WORDLV){ WORDLV={}; const ord={A1:0,A2:1,B1:2,B2:3,C1:4};
+    DATA.forEach(d=>{ const k=d[0].toLowerCase().replace(/\s*\(.*?\)\s*/g,'').trim();
+      if(!(k in WORDLV) || ord[d[1]]<ord[WORDLV[k]]) WORDLV[k]=d[1]; });
+  }
+  if(WORDLV[w]) return WORDLV[w];
+  const tries=[w.replace(/'s$/,''),w.replace(/ies$/,'y'),w.replace(/es$/,''),w.replace(/s$/,''),
+               w.replace(/ied$/,'y'),w.replace(/ed$/,''),w.replace(/ed$/,'e'),
+               w.replace(/ing$/,''),w.replace(/ing$/,'e'),w.replace(/ly$/,''),w.replace(/er$/,''),w.replace(/est$/,'')];
+  for(const t of tries){ if(t!==w && t.length>1 && WORDLV[t]) return WORDLV[t]; }
+  return null;
+}
+const UPGRADES={'good':'beneficial · impressive','bad':'harmful · negative','big':'significant · enormous',
+  'small':'minor · slight','very':'extremely · remarkably','really':'genuinely · truly',
+  'think':'believe · consider','important':'essential · crucial','many':'numerous · various',
+  'get':'obtain · receive','make':'create · produce','nice':'pleasant · wonderful','happy':'delighted · satisfied'};
+function vocabItems(text){
+  const low=text.toLowerCase();
+  const words=(low.match(/[a-z']+/g)||[]);
+  let known=0, adv=0; const advUsed=new Set();
+  for(const w of words){ const lv=wordLv(w); if(lv){ known++; if(lv==='B2'||lv==='C1'){ adv++; advUsed.add(w); } } }
+  const pct= known? Math.round(adv/known*100):0;
+  const items=[];
+  items.push({ok:pct>=8, t:'고급 어휘(B2·C1) 비율 '+pct+'%'+(advUsed.size?' — 사용: '+[...advUsed].slice(0,4).join(', '):''),
+              tip:'외운 B2 단어를 1~2개만 섞어도 어휘 점수가 올라요'});
+  const ups=[]; for(const k in UPGRADES){ if(new RegExp('\\b'+k+'\\b').test(low)) ups.push('<b>'+k+'</b>→'+UPGRADES[k]); }
+  if(ups.length) items.push({ok:false, t:'쉬운 단어 업그레이드: '+ups.slice(0,3).join(' / '), tip:'같은 뜻의 한 단계 위 단어로 바꿔보세요'});
+  return items;
+}
+function ckHTML(checks){
+  let h='<div class="cklist">';
+  for(const c of checks) h+='<div class="cki '+(c.ok?'y':'n')+'"><span class="ic">'+(c.ok?'✓':'✗')+'</span><span>'+c.t+(c.ok||!c.tip?'':' — <i>'+c.tip+'</i>')+'</span></div>';
+  return h+'</div>';
+}
+function speakFeedback(tr){
+  if(!tr || tr.trim().length<3){
+    return '<div style="font-family:var(--kr);font-size:12.5px;color:var(--faint);margin-top:6px">音성 인식이 안 되어 내용 피드백은 생략했어요 — Chrome 브라우저에서 가장 잘 작동해요</div>'.replace('音성','음성');
+  }
+  const low=' '+tr.toLowerCase()+' ';
+  const n=(tr.match(/[A-Za-z']+/g)||[]).length;
+  const checks=[
+    {ok:n>=70, t:'말한 분량 '+n+'단어 / 90초'+(n>=100?' 🏆':n>=70?' 👍':''), tip:'70단어 이상이 목표 — 이유나 예시를 하나 더 말하세요'},
+    {ok:/\b(i think|i believe|in my opinion|i prefer|i agree|i disagree)\b/.test(low), t:'의견 표현 (I think...)', tip:'첫 문장에서 입장을 분명히'},
+    {ok:/\b(because|since|so)\b/.test(low), t:'이유 말하기 (because...)', tip:'why에 대한 답을 꼭 넣으세요'},
+    {ok:/\b(for example|for instance|such as|like when)\b/.test(low), t:'예시 들기 (for example...)', tip:'경험 한 토막이 답을 길게 만들어요'},
+  ].concat(vocabItems(tr));
+  return ckHTML(checks)+'<div class="topic" style="font-size:13px;font-weight:400;text-align:left;margin-top:8px"><b>📝 인식된 내용</b><br>'+esc(tr.trim())+'</div>';
+}
 function beep(){ try{ const ctx=new (window.AudioContext||window.webkitAudioContext)(); const o=ctx.createOscillator(),g=ctx.createGain(); o.connect(g); g.connect(ctx.destination); o.frequency.value=880; g.gain.value=.12; o.start(); setTimeout(()=>{o.stop();ctx.close();},220);}catch(e){} }
 
 function detSpeak(){
   stopDetTimer();
-  const topic=rnd(SPEAK_TOPICS);
+  const ti=Math.floor(Math.random()*SPEAK_TOPICS.length);
+  const topic=SPEAK_TOPICS[ti];
   const a=$('#detArea');
   const canRec = !!(navigator.mediaDevices&&window.MediaRecorder);
   a.innerHTML='<div class="hint">DET 말하기 — 준비 30초 후 90초간 말하세요. 틀: 의견 → 이유 2개 → 예시 → 마무리</div>'+
     '<div class="topic" id="spTopic">'+esc(topic)+'</div>'+
     '<div class="tphase" id="spPhase">준비되면 시작을 누르세요</div>'+
     '<div class="timerbox" id="spTime">0:30</div>'+
+    '<div class="vumeter" id="spVu"><i></i></div>'+
     '<div class="controls">'+
       '<button class="btn" id="spStart">▶ 시작</button>'+
       '<button class="btn ghost" id="spNew">🔁 새 주제</button>'+
+      '<button class="btn ghost" id="spModelBtn">💡 모범 답안</button>'+
       (canRec?'<button class="btn ghost" id="spRec">🎙 녹음: 꺼짐</button>':'')+
     '</div>'+
+    '<div id="spModel" style="width:100%;max-width:560px"></div>'+
     '<div class="fb" id="spFb"></div><div id="spAudio"></div>';
+  $('#spModelBtn').onclick=()=>showModel('spModel', SPEAK_MODELS[ti]);
   let recOn=false;
   if(canRec) $('#spRec').onclick=()=>{ recOn=!recOn; $('#spRec').textContent='🎙 녹음: '+(recOn?'켜짐':'꺼짐'); };
   $('#spNew').onclick=()=>detSpeak();
   $('#spStart').onclick=async()=>{
     $('#spStart').disabled=true;
-    if(recOn){ try{ const st=await navigator.mediaDevices.getUserMedia({audio:true}); recChunks=[]; recRec=new MediaRecorder(st); recRec.ondataavailable=e=>recChunks.push(e.data); recRec.onstop=()=>{ st.getTracks().forEach(t=>t.stop()); const b=new Blob(recChunks,{type:'audio/webm'}); if(recURL) URL.revokeObjectURL(recURL); recURL=URL.createObjectURL(b); $('#spAudio').innerHTML='<audio controls src="'+recURL+'" style="margin-top:8px"></audio>'; }; }catch(e){ recOn=false; $('#spFb').innerHTML='<span class="no">마이크 권한이 없어 녹음 없이 진행해요</span>'; } }
+    // 마이크: 발화 감지용 (녹음 켜짐이면 같은 스트림 재사용)
+    let vadOK=false, an=null, buf=null;
+    try{
+      vadStream=await navigator.mediaDevices.getUserMedia({audio:true});
+      vadCtx=new (window.AudioContext||window.webkitAudioContext)();
+      const src=vadCtx.createMediaStreamSource(vadStream);
+      an=vadCtx.createAnalyser(); an.fftSize=512; src.connect(an);
+      buf=new Uint8Array(an.fftSize); vadOK=true;
+      if(recOn){ recChunks=[]; recRec=new MediaRecorder(vadStream); recRec.ondataavailable=e=>recChunks.push(e.data); recRec.onstop=()=>{ const b=new Blob(recChunks,{type:'audio/webm'}); if(recURL) URL.revokeObjectURL(recURL); recURL=URL.createObjectURL(b); $('#spAudio').innerHTML='<audio controls src="'+recURL+'" style="margin-top:8px"></audio>'; }; }
+    }catch(e){ vadOK=false; if(recOn){recOn=false;} $('#spFb').innerHTML='<span class="no">마이크 권한이 없어 발화 감지 없이 진행해요</span>'; }
     let t=30, speaking=false;
+    let voicedMs=0, silentRun=0, warned=false;
+    // 음성 인식 (받아쓰기 → 내용 피드백)
+    let srText='';
+    const SRC=window.SpeechRecognition||window.webkitSpeechRecognition;
+    function startSRec(){
+      if(!SRC) return;
+      try{
+        srObj=new SRC(); srObj.lang='en-US'; srObj.continuous=true; srObj.interimResults=false;
+        srObj.onresult=e=>{ for(let i=e.resultIndex;i<e.results.length;i++){ if(e.results[i].isFinal) srText+=e.results[i][0].transcript+' '; } };
+        srObj.onend=()=>{ if(srAlive){ try{srObj.start();}catch(e){} } };
+        srAlive=true; srObj.start();
+      }catch(e){ srObj=null; }
+    }
+    if(vadOK){
+      vadTimer=setInterval(()=>{
+        an.getByteTimeDomainData(buf);
+        let sum=0; for(let i=0;i<buf.length;i++){ const v=(buf[i]-128)/128; sum+=v*v; }
+        const rms=Math.sqrt(sum/buf.length);
+        const talking=rms>0.035;
+        const vu=document.querySelector('#spVu i'); if(vu) vu.style.width=Math.min(100,Math.round(rms*900))+'%';
+        if(!speaking) return; // 준비 시간에는 측정 안 함
+        if(talking){ voicedMs+=200; silentRun=0; if(warned){ warned=false; $('#spFb').innerHTML=''; } }
+        else { silentRun+=200;
+          if(silentRun>=4000 && !warned){ warned=true; $('#spFb').innerHTML='<span class="no">🗣 멈추지 마세요! 침묵이 길면 점수가 깎여요 — 이유나 예시를 하나 더!</span>'; }
+        }
+      },200);
+    }
     $('#spPhase').textContent='🧠 준비 시간 — 무엇을 말할지 구상하세요';
     const tick=()=>{
       const m=Math.floor(t/60), s=String(t%60).padStart(2,'0');
       const tb=$('#spTime'); tb.textContent=m+':'+s; tb.classList.toggle('warn', speaking&&t<=10);
       if(t===0){
-        if(!speaking){ speaking=true; t=90; beep(); $('#spPhase').textContent='🎙 말하기! 90초 — 의견→이유 2개→예시'; if(recOn&&recRec) try{recRec.start();}catch(e){} }
-        else { clearInterval(detTimer); detTimer=null; beep(); $('#spPhase').textContent='⏹ 종료!'; $('#spFb').innerHTML='<span class="ok">수고했어요! ✓ 오늘 학습에 기록됨</span>'; if(recRec&&recRec.state!=='inactive') try{recRec.stop();}catch(e){} planProgress('sp'); detBump(); return; }
+        if(!speaking){ speaking=true; t=90; beep(); $('#spPhase').textContent='🎙 말하기! 90초 — 의견→이유 2개→예시'; if(recOn&&recRec) try{recRec.start();}catch(e){} startSRec(); }
+        else {
+          clearInterval(detTimer); detTimer=null; beep();
+          $('#spPhase').textContent='⏹ 종료!';
+          if(recRec&&recRec.state!=='inactive') try{recRec.stop();}catch(e){}
+          stopVAD(); stopSR();
+          let msg='<span class="ok">수고했어요! ✓ 오늘 학습에 기록됨</span>';
+          if(vadOK){
+            const sec=Math.round(voicedMs/1000);
+            const grade= sec>=70?'🏆 훌륭해요!': sec>=50?'👍 좋아요, 조금만 더 길게': '⚠️ 발화가 짧아요 — 90초를 꽉 채우는 연습이 점수의 핵심!';
+            msg='<span class="'+(sec>=50?'ok':'no')+'">발화 시간 약 '+sec+'초 / 90초 — '+grade+'</span><br><span class="ok">✓ 오늘 학습에 기록됨</span>';
+          }
+          // 내용 피드백 (음성 인식 결과 분석) — 인식 마무리 시간 약간 대기
+          setTimeout(()=>{ try{ $('#spFb').innerHTML=msg+speakFeedback(srText); }catch(e){} }, 700);
+          $('#spFb').innerHTML=msg;
+          planProgress('sp'); detBump(); return;
+        }
       }
       t--;
     };
@@ -1001,15 +1265,18 @@ function detSpeak(){
 
 function detWrite(){
   stopDetTimer();
-  const topic=rnd(WRITE_TOPICS);
+  const wi=Math.floor(Math.random()*WRITE_TOPICS.length);
+  const topic=WRITE_TOPICS[wi];
   const a=$('#detArea');
   a.innerHTML='<div class="hint">DET 쓰기 — 5분 안에 50단어 이상. 틀: 입장 1문장 → 이유+예시 2~3문장 → 마무리 1문장</div>'+
     '<div class="topic">'+esc(topic)+'</div>'+
-    '<div class="controls"><span class="tphase" id="wrPhase"></span><span class="timerbox" id="wrTime" style="font-size:26px">5:00</span><button class="btn ghost" id="wrTimer">⏱ 타이머 시작</button><button class="btn ghost" id="wrNew">🔁 새 주제</button></div>'+
+    '<div class="controls"><span class="tphase" id="wrPhase"></span><span class="timerbox" id="wrTime" style="font-size:26px">5:00</span><button class="btn ghost" id="wrTimer">⏱ 타이머 시작</button><button class="btn ghost" id="wrNew">🔁 새 주제</button><button class="btn ghost" id="wrModelBtn">💡 모범 답안</button></div>'+
+    '<div id="wrModel" style="width:100%;max-width:560px"></div>'+
     '<textarea class="ta" id="wrTa" placeholder="여기에 영어로 작성하세요..."></textarea>'+
     '<div class="wc" id="wrWc">0 단어 / 목표 <b>50+</b></div>'+
     '<div class="controls"><button class="btn" id="wrDone">완료</button></div>'+
     '<div class="fb" id="wrFb"></div>';
+  $('#wrModelBtn').onclick=()=>showModel('wrModel', WRITE_MODELS[wi]);
   const ta=$('#wrTa');
   const wc=()=>{ const n=(ta.value.trim().match(/[A-Za-z']+/g)||[]).length; $('#wrWc').innerHTML=n+' 단어 / 목표 <b>50+</b>'; return n; };
   ta.addEventListener('input',wc);
@@ -1021,10 +1288,147 @@ function detWrite(){
     tick(); detTimer=setInterval(tick,1000);
   };
   $('#wrDone').onclick=()=>{
-    const n=wc();
-    if(n>=50){ $('#wrFb').innerHTML='<span class="ok">'+n+'단어 완성! ✓ 오늘 학습에 기록됨</span>'; planProgress('wr'); detBump(); stopDetTimer(); }
-    else { $('#wrFb').innerHTML='<span class="no">'+n+'단어 — 50단어 이상을 채워보세요 (이유나 예시를 한 문장 더!)</span>'; }
+    const n=wc(); const txt=ta.value;
+    const low=' '+txt.toLowerCase().replace(/\s+/g,' ')+' ';
+    const sents=(txt.match(/[.!?]+(\s|$)/g)||[]).length;
+    const has=re=>re.test(low);
+    const checks=[
+      {ok:n>=50, t:'50단어 이상 ('+n+'단어)', tip:'이유나 예시를 한 문장 더 추가해 보세요'},
+      {ok:sents>=4, t:'문장 4개 이상 ('+sents+'문장)', tip:'긴 한 문장보다 짧은 여러 문장이 점수에 유리해요'},
+      {ok:has(/\b(i think|i believe|in my opinion|i prefer|i agree|i disagree)\b/), t:'의견 표현 (I think / In my opinion...)', tip:'첫 문장에서 입장을 분명히 밝히세요'},
+      {ok:has(/\b(because|since|as a result|that is why)\b/), t:'이유 연결어 (because / since...)', tip:'왜 그렇게 생각하는지 because로 이어 보세요'},
+      {ok:has(/\b(for example|for instance|such as)\b/), t:'예시 제시 (for example...)', tip:'구체적인 경험·사례 하나가 점수를 올려요'},
+      {ok:has(/\b(however|also|in addition|moreover|on the other hand|first|second|finally)\b/), t:'연결어 (however / also / in addition...)', tip:'문장 사이를 연결어로 이어주면 글이 매끄러워요'},
+      {ok:has(/\b(in conclusion|overall|therefore|in short|to sum up)\b/), t:'마무리 문장 (in conclusion / overall...)', tip:'마지막에 입장을 한 번 더 정리하세요'},
+    ];
+    // 반복 단어 경고
+    const stop=new Set(['the','a','an','and','or','but','to','of','in','on','for','is','are','was','were','i','it','that','this','my','we','you','they','he','she','with','at','be','have','has','do','not','so','as']);
+    const freq={}; (low.match(/[a-z']+/g)||[]).forEach(w=>{ if(!stop.has(w)&&w.length>2) freq[w]=(freq[w]||0)+1; });
+    const rep=Object.entries(freq).filter(([w,c])=>c>=5).map(([w,c])=>w+'×'+c);
+    if(rep.length) checks.push({ok:false, t:'같은 단어 반복: '+rep.slice(0,3).join(', '), tip:'동의어로 바꿔보세요 (good→helpful/useful 등)'});
+    // 형식: 문장 첫 글자 대문자 / 'i' 단독 소문자
+    const capIssues=(txt.match(/(?:^|[.!?]\s+)([a-z])/g)||[]).length + (txt.match(/\bi\b/g)||[]).length;
+    if(capIssues>0) checks.push({ok:false, t:'대문자 확인 '+capIssues+'곳 — 문장 시작과 I는 대문자로', tip:'사소하지만 채점에서 감점돼요'});
+    // 너무 긴 문장
+    const longest=Math.max(0,...(txt.split(/[.!?]+/).map(s=>(s.match(/[A-Za-z']+/g)||[]).length)));
+    if(longest>28) checks.push({ok:false, t:'너무 긴 문장이 있어요 (최장 '+longest+'단어)', tip:'두 문장으로 나누면 문법 실수가 줄어요'});
+    // 어휘 수준 진단 (B2·C1 비율 + 업그레이드 추천)
+    checks.push(...vocabItems(txt));
+    const passed=checks.filter(c=>c.ok).length;
+    let html='<div class="cklist">';
+    for(const c of checks) html+='<div class="cki '+(c.ok?'y':'n')+'"><span class="ic">'+(c.ok?'✓':'✗')+'</span><span>'+c.t+(c.ok?'':' — <i>'+c.tip+'</i>')+'</span></div>';
+    html+='</div>';
+    const head= passed>=6? '<span class="ok">🏆 '+passed+'/'+checks.length+' 통과 — 이 구조면 충분해요!</span>'
+      : passed>=4? '<span class="ok">👍 '+passed+'/'+checks.length+' 통과 — ✗ 항목만 보완하면 완성!</span>'
+      : '<span class="no">'+passed+'/'+checks.length+' 통과 — ✗ 항목을 채워서 다시 완료를 눌러보세요</span>';
+    $('#wrFb').innerHTML=head+html;
+    if(n>=50){ planProgress('wr'); detBump(); stopDetTimer(); }
+    try{ $('#wrFb').scrollIntoView({block:'nearest',behavior:'smooth'}); }catch(e){}
   };
+}
+
+// ===== 표현 학습 (말하기·쓰기 실력 키우기) =====
+const EXPR=[
+ {c:'의견',p:'In my opinion, ~',k:'제 생각에는 ~',ex:'In my opinion, remote work makes employees more productive.',rx:'in my opinion'},
+ {c:'의견',p:'I strongly believe that ~',k:'저는 ~라고 강하게 믿어요',ex:'I strongly believe that everyone should learn a second language.',rx:'i strongly believe|i believe'},
+ {c:'의견',p:'From my perspective, ~',k:'제 관점에서는 ~',ex:'From my perspective, city life offers more opportunities.',rx:'from my perspective'},
+ {c:'의견',p:'I would say that ~',k:'~라고 말하고 싶어요',ex:'I would say that social media has changed how we communicate.',rx:'i would say'},
+ {c:'이유',p:'The main reason is that ~',k:'주된 이유는 ~이기 때문이에요',ex:'The main reason is that online shopping saves a lot of time.',rx:'the main reason'},
+ {c:'이유',p:'This is because ~',k:'이것은 ~ 때문이에요',ex:'This is because people can work from anywhere with the internet.',rx:'this is because'},
+ {c:'이유',p:'One reason for this is ~',k:'그 이유 중 하나는 ~',ex:'One reason for this is the rising cost of living in big cities.',rx:'one reason'},
+ {c:'이유',p:'~, which is why ...',k:'~해서, 그래서 ...',ex:'I grew up near the sea, which is why I love swimming.',rx:'which is why'},
+ {c:'예시',p:'For example, ~',k:'예를 들어 ~',ex:'For example, I use a language app every morning on the subway.',rx:'for example'},
+ {c:'예시',p:'A good example of this is ~',k:'좋은 예가 바로 ~',ex:"A good example of this is my company's flexible work policy.",rx:'a good example'},
+ {c:'예시',p:'In my case, ~',k:'제 경우에는 ~',ex:'In my case, studying at night works much better than mornings.',rx:'in my case'},
+ {c:'예시',p:'When I was ~, ...',k:'제가 ~했을 때 ...',ex:'When I was a student, I traveled alone for the first time.',rx:'when i was'},
+ {c:'대조',p:'However, ~',k:'하지만 ~',ex:'However, working from home can make people feel isolated.',rx:'however'},
+ {c:'대조',p:'On the other hand, ~',k:'반면에 ~',ex:'On the other hand, living in the countryside is much quieter.',rx:'on the other hand'},
+ {c:'대조',p:'Even though ~, ...',k:'비록 ~이지만 ...',ex:'Even though it is expensive, I think travel is worth the money.',rx:'even though'},
+ {c:'대조',p:'While some people think ~, I ...',k:'어떤 사람들은 ~라고 생각하지만, 저는 ...',ex:'While some people think uniforms limit freedom, I find them convenient.',rx:'while some people'},
+ {c:'추가',p:'In addition, ~',k:'게다가 ~',ex:'In addition, exercise helps people manage stress effectively.',rx:'in addition'},
+ {c:'추가',p:'Moreover, ~',k:'더욱이 ~',ex:'Moreover, public transportation reduces air pollution in cities.',rx:'moreover'},
+ {c:'추가',p:'Another point is that ~',k:'또 다른 점은 ~',ex:'Another point is that reading improves vocabulary naturally.',rx:'another point'},
+ {c:'추가',p:'Not only ~, but also ...',k:'~뿐만 아니라 ...도',ex:'Not only does it save money, but it also protects the environment.',rx:'not only'},
+ {c:'결론',p:'In conclusion, ~',k:'결론적으로 ~',ex:'In conclusion, I prefer online classes because of their flexibility.',rx:'in conclusion'},
+ {c:'결론',p:'Overall, ~',k:'전반적으로 ~',ex:'Overall, the advantages clearly outweigh the disadvantages.',rx:'overall'},
+ {c:'결론',p:'That is why I think ~',k:'그래서 저는 ~라고 생각해요',ex:'That is why I think everyone should try living abroad once.',rx:'that is why'},
+ {c:'결론',p:'To sum up, ~',k:'요약하자면 ~',ex:'To sum up, technology has made our lives more convenient.',rx:'to sum up'},
+ {c:'사진 묘사',p:'In this picture, I can see ~',k:'이 사진에서 ~가 보여요',ex:'In this picture, I can see two people having coffee at a cafe.',rx:'i can see'},
+ {c:'사진 묘사',p:'It looks like ~',k:'~처럼 보여요',ex:'It looks like they are celebrating something special together.',rx:'it looks like'},
+ {c:'사진 묘사',p:'In the background, there is ~',k:'배경에는 ~가 있어요',ex:'In the background, there is a tall building with many windows.',rx:'in the background'},
+ {c:'사진 묘사',p:'The person seems to be ~ing',k:'그 사람은 ~하고 있는 것 같아요',ex:'The person seems to be explaining something to her colleague.',rx:'seems to be'},
+ {c:'시간 벌기',p:"That's an interesting question.",k:'(생각할 시간 벌기) 흥미로운 질문이네요',ex:"That's an interesting question. I have never thought about it before.",rx:'interesting question'},
+ {c:'시간 벌기',p:'Let me think about it for a second.',k:'잠깐 생각해 볼게요',ex:'Let me think about it for a second. I would say my hometown.',rx:'let me think'},
+ {c:'시간 벌기',p:'What I mean is ~',k:'제 말은 ~라는 거예요',ex:'What I mean is that quality matters more than quantity.',rx:'what i mean'},
+ {c:'시간 벌기',p:'In other words, ~',k:'다시 말해 ~',ex:'In other words, practice is the only way to improve.',rx:'in other words'},
+];
+let exCat='전체', exIdx=0;
+function detLearn(){
+  stopDetTimer();
+  const cats=['전체',...new Set(EXPR.map(e=>e.c))];
+  const pool=EXPR.filter(e=>exCat==='전체'||e.c===exCat);
+  if(exIdx>=pool.length) exIdx=0; if(exIdx<0) exIdx=pool.length-1;
+  const e=pool[exIdx];
+  const a=$('#detArea');
+  a.innerHTML='<div class="hint">DET 답변의 뼈대가 되는 표현 — 듣고, 따라 말하고, 내 문장으로 만들어 보세요</div>'+
+    '<div class="excats">'+cats.map(c=>'<button class="excat'+(c===exCat?' on':'')+'" data-c="'+c+'">'+c+'</button>').join('')+'</div>'+
+    '<div class="excard">'+
+      '<span class="ecat">'+esc(e.c)+'</span>'+
+      '<div class="ep">'+esc(e.p)+' <button class="spk" style="width:34px;height:34px;font-size:14px;margin:0;vertical-align:middle" id="exSpk">🔊</button></div>'+
+      '<div class="ek">'+esc(e.k)+'</div>'+
+      '<div class="eex" id="exEx" title="클릭하면 예문 발음">"'+esc(e.ex)+'"</div>'+
+      '<div class="exnum" style="margin-top:10px">'+(exIdx+1)+' / '+pool.length+'</div>'+
+    '</div>'+
+    '<div class="controls">'+
+      '<button class="btn ghost" id="exPrev">← 이전</button>'+
+      '<button class="btn ghost" id="exShadow">🎤 따라 말하기</button>'+
+      '<button class="btn ghost" id="exNext">다음 →</button>'+
+    '</div>'+
+    '<div class="hint" style="margin-top:4px">✍️ 이 패턴으로 내 문장 만들기 (영어로)</div>'+
+    '<input class="inp" id="exInp" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="예: '+esc(e.p.replace('~','...'))+'">'+
+    '<div class="controls"><button class="btn" id="exChk">확인</button></div>'+
+    '<div class="fb" id="exFb"></div>';
+  $$('.excat').forEach(b=>b.onclick=()=>{ exCat=b.dataset.c; exIdx=0; detLearn(); });
+  $('#exSpk').onclick=()=>speak(e.p.replace(/~/g,'').replace(/\.\.\./g,''));
+  $('#exEx').onclick=()=>speak(e.ex);
+  $('#exPrev').onclick=()=>{exIdx--;detLearn();};
+  $('#exNext').onclick=()=>{exIdx++;detLearn();};
+  $('#exShadow').onclick=()=>{
+    const SRC=window.SpeechRecognition||window.webkitSpeechRecognition;
+    if(!SRC){ $('#exFb').innerHTML='<span class="no">이 브라우저는 음성 인식을 지원하지 않아요 — Chrome에서 사용해 보세요</span>'; return; }
+    $('#exFb').innerHTML='👂 예문을 들려드릴게요...';
+    speak(e.ex);
+    const exWords=(e.ex.toLowerCase().match(/[a-z']+/g)||[]);
+    setTimeout(()=>{
+      $('#exFb').innerHTML='🎤 <b>지금 따라 말하세요!</b>';
+      try{
+        srObj=new SRC(); srObj.lang='en-US'; srObj.continuous=false; srObj.interimResults=false; srAlive=false;
+        let got=false;
+        srObj.onresult=ev=>{
+          got=true;
+          const said=(ev.results[0][0].transcript||'').toLowerCase();
+          const saidW=new Set(said.match(/[a-z']+/g)||[]);
+          const hit=exWords.filter(wd=>saidW.has(wd)).length;
+          const pct=Math.round(hit/exWords.length*100);
+          const grade= pct>=80?'🏆 거의 완벽!': pct>=55?'👍 좋아요 — 한 번 더!':'⚠️ 다시 들어보고 천천히 따라 해보세요';
+          $('#exFb').innerHTML='<span class="'+(pct>=55?'ok':'no')+'">일치율 '+pct+'% — '+grade+'</span><br><span style="font-size:13px;color:var(--muted)">내가 말한 것: '+esc(said)+'</span>';
+        };
+        srObj.onend=()=>{ if(!got) $('#exFb').innerHTML='<span class="no">목소리가 인식되지 않았어요 — 🎤 버튼을 다시 눌러보세요</span>'; };
+        srObj.start();
+        setTimeout(()=>{ try{srObj.stop();}catch(x){} },9000);
+      }catch(x){ $('#exFb').innerHTML='<span class="no">마이크를 사용할 수 없어요</span>'; }
+    }, Math.min(7000, 1200+e.ex.length*65));
+  };
+  const doChk=()=>{
+    const v=($('#exInp').value||'').toLowerCase();
+    const n=(v.match(/[a-z']+/g)||[]).length;
+    const hasP=new RegExp(e.rx).test(v);
+    if(hasP && n>=6){ $('#exFb').innerHTML='<span class="ok">✓ 좋아요! 패턴을 정확히 썼어요</span>'+ckHTML(vocabItems(v)); speak($('#exInp').value); }
+    else if(hasP) $('#exFb').innerHTML='<span class="no">패턴은 맞아요 — 6단어 이상으로 문장을 완성해 보세요</span>';
+    else $('#exFb').innerHTML='<span class="no">패턴 <b>'+esc(e.p)+'</b>를 문장에 넣어보세요</span>';
+  };
+  $('#exChk').onclick=doChk;
+  $('#exInp').addEventListener('keydown',ev=>{ if(ev.key==='Enter') doChk(); });
 }
 
 render();

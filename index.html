@@ -169,6 +169,7 @@ h1 em{font-style:italic;font-weight:400}
 .excard .ek{font-family:var(--kr);font-size:14px;color:var(--muted);margin-top:7px}
 .excard .eex{font-family:var(--kr);font-size:14px;color:var(--ink);background:var(--paper2);border-radius:10px;padding:11px 13px;margin-top:13px;line-height:1.6;cursor:pointer}
 .excard .eex:hover{outline:1.4px solid var(--brand)}
+.excard .eexk{font-family:var(--kr);font-size:13px;color:var(--muted);margin-top:7px;line-height:1.5}
 .exnum{font-family:var(--sans);font-size:12px;color:var(--faint)}
 .modelbox{background:#f6f1e2;border:1.5px solid var(--line2);border-radius:13px;padding:14px 16px;margin-top:4px;text-align:left}
 .mhead{font-family:var(--kr);font-weight:700;font-size:13.5px;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
@@ -1339,38 +1340,38 @@ function detWrite(){
 
 // ===== 표현 학습 (말하기·쓰기 실력 키우기) =====
 const EXPR=[
- {c:'의견',p:'In my opinion, ~',k:'제 생각에는 ~',ex:'In my opinion, remote work makes employees more productive.',rx:'in my opinion'},
- {c:'의견',p:'I strongly believe that ~',k:'저는 ~라고 강하게 믿어요',ex:'I strongly believe that everyone should learn a second language.',rx:'i strongly believe|i believe'},
- {c:'의견',p:'From my perspective, ~',k:'제 관점에서는 ~',ex:'From my perspective, city life offers more opportunities.',rx:'from my perspective'},
- {c:'의견',p:'I would say that ~',k:'~라고 말하고 싶어요',ex:'I would say that social media has changed how we communicate.',rx:'i would say'},
- {c:'이유',p:'The main reason is that ~',k:'주된 이유는 ~이기 때문이에요',ex:'The main reason is that online shopping saves a lot of time.',rx:'the main reason'},
- {c:'이유',p:'This is because ~',k:'이것은 ~ 때문이에요',ex:'This is because people can work from anywhere with the internet.',rx:'this is because'},
- {c:'이유',p:'One reason for this is ~',k:'그 이유 중 하나는 ~',ex:'One reason for this is the rising cost of living in big cities.',rx:'one reason'},
- {c:'이유',p:'~, which is why ...',k:'~해서, 그래서 ...',ex:'I grew up near the sea, which is why I love swimming.',rx:'which is why'},
- {c:'예시',p:'For example, ~',k:'예를 들어 ~',ex:'For example, I use a language app every morning on the subway.',rx:'for example'},
- {c:'예시',p:'A good example of this is ~',k:'좋은 예가 바로 ~',ex:"A good example of this is my company's flexible work policy.",rx:'a good example'},
- {c:'예시',p:'In my case, ~',k:'제 경우에는 ~',ex:'In my case, studying at night works much better than mornings.',rx:'in my case'},
- {c:'예시',p:'When I was ~, ...',k:'제가 ~했을 때 ...',ex:'When I was a student, I traveled alone for the first time.',rx:'when i was'},
- {c:'대조',p:'However, ~',k:'하지만 ~',ex:'However, working from home can make people feel isolated.',rx:'however'},
- {c:'대조',p:'On the other hand, ~',k:'반면에 ~',ex:'On the other hand, living in the countryside is much quieter.',rx:'on the other hand'},
- {c:'대조',p:'Even though ~, ...',k:'비록 ~이지만 ...',ex:'Even though it is expensive, I think travel is worth the money.',rx:'even though'},
- {c:'대조',p:'While some people think ~, I ...',k:'어떤 사람들은 ~라고 생각하지만, 저는 ...',ex:'While some people think uniforms limit freedom, I find them convenient.',rx:'while some people'},
- {c:'추가',p:'In addition, ~',k:'게다가 ~',ex:'In addition, exercise helps people manage stress effectively.',rx:'in addition'},
- {c:'추가',p:'Moreover, ~',k:'더욱이 ~',ex:'Moreover, public transportation reduces air pollution in cities.',rx:'moreover'},
- {c:'추가',p:'Another point is that ~',k:'또 다른 점은 ~',ex:'Another point is that reading improves vocabulary naturally.',rx:'another point'},
- {c:'추가',p:'Not only ~, but also ...',k:'~뿐만 아니라 ...도',ex:'Not only does it save money, but it also protects the environment.',rx:'not only'},
- {c:'결론',p:'In conclusion, ~',k:'결론적으로 ~',ex:'In conclusion, I prefer online classes because of their flexibility.',rx:'in conclusion'},
- {c:'결론',p:'Overall, ~',k:'전반적으로 ~',ex:'Overall, the advantages clearly outweigh the disadvantages.',rx:'overall'},
- {c:'결론',p:'That is why I think ~',k:'그래서 저는 ~라고 생각해요',ex:'That is why I think everyone should try living abroad once.',rx:'that is why'},
- {c:'결론',p:'To sum up, ~',k:'요약하자면 ~',ex:'To sum up, technology has made our lives more convenient.',rx:'to sum up'},
- {c:'사진 묘사',p:'In this picture, I can see ~',k:'이 사진에서 ~가 보여요',ex:'In this picture, I can see two people having coffee at a cafe.',rx:'i can see'},
- {c:'사진 묘사',p:'It looks like ~',k:'~처럼 보여요',ex:'It looks like they are celebrating something special together.',rx:'it looks like'},
- {c:'사진 묘사',p:'In the background, there is ~',k:'배경에는 ~가 있어요',ex:'In the background, there is a tall building with many windows.',rx:'in the background'},
- {c:'사진 묘사',p:'The person seems to be ~ing',k:'그 사람은 ~하고 있는 것 같아요',ex:'The person seems to be explaining something to her colleague.',rx:'seems to be'},
- {c:'시간 벌기',p:"That's an interesting question.",k:'(생각할 시간 벌기) 흥미로운 질문이네요',ex:"That's an interesting question. I have never thought about it before.",rx:'interesting question'},
- {c:'시간 벌기',p:'Let me think about it for a second.',k:'잠깐 생각해 볼게요',ex:'Let me think about it for a second. I would say my hometown.',rx:'let me think'},
- {c:'시간 벌기',p:'What I mean is ~',k:'제 말은 ~라는 거예요',ex:'What I mean is that quality matters more than quantity.',rx:'what i mean'},
- {c:'시간 벌기',p:'In other words, ~',k:'다시 말해 ~',ex:'In other words, practice is the only way to improve.',rx:'in other words'},
+ {c:'의견',p:'In my opinion, ~',k:'제 생각에는 ~',ex:'In my opinion, remote work makes employees more productive.',ke:'제 생각에는, 재택근무가 직원들을 더 생산적으로 만들어요.',rx:'in my opinion'},
+ {c:'의견',p:'I strongly believe that ~',k:'저는 ~라고 강하게 믿어요',ex:'I strongly believe that everyone should learn a second language.',ke:'저는 모두가 제2외국어를 배워야 한다고 강하게 믿어요.',rx:'i strongly believe|i believe'},
+ {c:'의견',p:'From my perspective, ~',k:'제 관점에서는 ~',ex:'From my perspective, city life offers more opportunities.',ke:'제 관점에서는, 도시 생활이 더 많은 기회를 제공해요.',rx:'from my perspective'},
+ {c:'의견',p:'I would say that ~',k:'~라고 말하고 싶어요',ex:'I would say that social media has changed how we communicate.',ke:'소셜미디어가 우리의 소통 방식을 바꿨다고 말하고 싶어요.',rx:'i would say'},
+ {c:'이유',p:'The main reason is that ~',k:'주된 이유는 ~이기 때문이에요',ex:'The main reason is that online shopping saves a lot of time.',ke:'주된 이유는 온라인 쇼핑이 시간을 많이 절약해 주기 때문이에요.',rx:'the main reason'},
+ {c:'이유',p:'This is because ~',k:'이것은 ~ 때문이에요',ex:'This is because people can work from anywhere with the internet.',ke:'이것은 사람들이 인터넷만 있으면 어디서나 일할 수 있기 때문이에요.',rx:'this is because'},
+ {c:'이유',p:'One reason for this is ~',k:'그 이유 중 하나는 ~',ex:'One reason for this is the rising cost of living in big cities.',ke:'그 이유 중 하나는 대도시의 생활비 상승이에요.',rx:'one reason'},
+ {c:'이유',p:'~, which is why ...',k:'~해서, 그래서 ...',ex:'I grew up near the sea, which is why I love swimming.',ke:'저는 바다 근처에서 자랐고, 그래서 수영을 좋아해요.',rx:'which is why'},
+ {c:'예시',p:'For example, ~',k:'예를 들어 ~',ex:'For example, I use a language app every morning on the subway.',ke:'예를 들어, 저는 매일 아침 지하철에서 언어 앱을 사용해요.',rx:'for example'},
+ {c:'예시',p:'A good example of this is ~',k:'좋은 예가 바로 ~',ex:"A good example of this is my company's flexible work policy.",ke:'좋은 예가 바로 저희 회사의 유연 근무 정책이에요.',rx:'a good example'},
+ {c:'예시',p:'In my case, ~',k:'제 경우에는 ~',ex:'In my case, studying at night works much better than mornings.',ke:'제 경우에는, 아침보다 밤에 공부하는 게 훨씬 잘 맞아요.',rx:'in my case'},
+ {c:'예시',p:'When I was ~, ...',k:'제가 ~했을 때 ...',ex:'When I was a student, I traveled alone for the first time.',ke:'제가 학생이었을 때, 처음으로 혼자 여행을 했어요.',rx:'when i was'},
+ {c:'대조',p:'However, ~',k:'하지만 ~',ex:'However, working from home can make people feel isolated.',ke:'하지만, 재택근무는 사람들을 고립감을 느끼게 할 수 있어요.',rx:'however'},
+ {c:'대조',p:'On the other hand, ~',k:'반면에 ~',ex:'On the other hand, living in the countryside is much quieter.',ke:'반면에, 시골에 사는 것은 훨씬 더 조용해요.',rx:'on the other hand'},
+ {c:'대조',p:'Even though ~, ...',k:'비록 ~이지만 ...',ex:'Even though it is expensive, I think travel is worth the money.',ke:'비록 비싸지만, 여행은 그 값어치를 한다고 생각해요.',rx:'even though'},
+ {c:'대조',p:'While some people think ~, I ...',k:'어떤 사람들은 ~라고 생각하지만, 저는 ...',ex:'While some people think uniforms limit freedom, I find them convenient.',ke:'어떤 사람들은 교복이 자유를 제한한다고 생각하지만, 저는 편리하다고 느껴요.',rx:'while some people'},
+ {c:'추가',p:'In addition, ~',k:'게다가 ~',ex:'In addition, exercise helps people manage stress effectively.',ke:'게다가, 운동은 사람들이 스트레스를 효과적으로 관리하도록 도와줘요.',rx:'in addition'},
+ {c:'추가',p:'Moreover, ~',k:'더욱이 ~',ex:'Moreover, public transportation reduces air pollution in cities.',ke:'더욱이, 대중교통은 도시의 대기 오염을 줄여줘요.',rx:'moreover'},
+ {c:'추가',p:'Another point is that ~',k:'또 다른 점은 ~',ex:'Another point is that reading improves vocabulary naturally.',ke:'또 다른 점은 독서가 어휘력을 자연스럽게 향상시킨다는 거예요.',rx:'another point'},
+ {c:'추가',p:'Not only ~, but also ...',k:'~뿐만 아니라 ...도',ex:'Not only does it save money, but it also protects the environment.',ke:'그것은 돈을 절약할 뿐만 아니라, 환경도 보호해요.',rx:'not only'},
+ {c:'결론',p:'In conclusion, ~',k:'결론적으로 ~',ex:'In conclusion, I prefer online classes because of their flexibility.',ke:'결론적으로, 저는 유연성 때문에 온라인 수업을 선호해요.',rx:'in conclusion'},
+ {c:'결론',p:'Overall, ~',k:'전반적으로 ~',ex:'Overall, the advantages clearly outweigh the disadvantages.',ke:'전반적으로, 장점이 단점보다 분명히 더 커요.',rx:'overall'},
+ {c:'결론',p:'That is why I think ~',k:'그래서 저는 ~라고 생각해요',ex:'That is why I think everyone should try living abroad once.',ke:'그래서 저는 모두가 한 번쯤 해외에서 살아봐야 한다고 생각해요.',rx:'that is why'},
+ {c:'결론',p:'To sum up, ~',k:'요약하자면 ~',ex:'To sum up, technology has made our lives more convenient.',ke:'요약하자면, 기술은 우리의 삶을 더 편리하게 만들었어요.',rx:'to sum up'},
+ {c:'사진 묘사',p:'In this picture, I can see ~',k:'이 사진에서 ~가 보여요',ex:'In this picture, I can see two people having coffee at a cafe.',ke:'이 사진에서, 두 사람이 카페에서 커피를 마시는 게 보여요.',rx:'i can see'},
+ {c:'사진 묘사',p:'It looks like ~',k:'~처럼 보여요',ex:'It looks like they are celebrating something special together.',ke:'그들이 함께 특별한 무언가를 축하하는 것처럼 보여요.',rx:'it looks like'},
+ {c:'사진 묘사',p:'In the background, there is ~',k:'배경에는 ~가 있어요',ex:'In the background, there is a tall building with many windows.',ke:'배경에는, 창문이 많은 높은 건물이 있어요.',rx:'in the background'},
+ {c:'사진 묘사',p:'The person seems to be ~ing',k:'그 사람은 ~하고 있는 것 같아요',ex:'The person seems to be explaining something to her colleague.',ke:'그 사람은 동료에게 무언가를 설명하고 있는 것 같아요.',rx:'seems to be'},
+ {c:'시간 벌기',p:"That's an interesting question.",k:'(생각할 시간 벌기) 흥미로운 질문이네요',ex:"That's an interesting question. I have never thought about it before.",ke:'흥미로운 질문이네요. 전에는 그것에 대해 생각해 본 적이 없어요.',rx:'interesting question'},
+ {c:'시간 벌기',p:'Let me think about it for a second.',k:'잠깐 생각해 볼게요',ex:'Let me think about it for a second. I would say my hometown.',ke:'잠깐 생각해 볼게요. 저는 제 고향이라고 말하겠어요.',rx:'let me think'},
+ {c:'시간 벌기',p:'What I mean is ~',k:'제 말은 ~라는 거예요',ex:'What I mean is that quality matters more than quantity.',ke:'제 말은 양보다 질이 더 중요하다는 거예요.',rx:'what i mean'},
+ {c:'시간 벌기',p:'In other words, ~',k:'다시 말해 ~',ex:'In other words, practice is the only way to improve.',ke:'다시 말해, 연습이 향상하는 유일한 방법이에요.',rx:'in other words'},
 ];
 let exCat='전체', exIdx=0;
 function detLearn(){
@@ -1387,6 +1388,7 @@ function detLearn(){
       '<div class="ep">'+esc(e.p)+' <button class="spk" style="width:34px;height:34px;font-size:14px;margin:0;vertical-align:middle" id="exSpk">🔊</button></div>'+
       '<div class="ek">'+esc(e.k)+'</div>'+
       '<div class="eex" id="exEx" title="클릭하면 예문 발음">"'+esc(e.ex)+'"</div>'+
+      '<div class="eexk">'+esc(e.ke||'')+'</div>'+
       '<div class="exnum" style="margin-top:10px">'+(exIdx+1)+' / '+pool.length+'</div>'+
     '</div>'+
     '<div class="controls">'+

@@ -105,6 +105,11 @@ h1 em{font-style:italic;font-weight:400}
 .pick.good{border-color:var(--a1);background:#e7f1e7;color:#1d5e36}
 .pick.bad{border-color:var(--c1);background:#f6e6e4;color:#8a2a25}
 .pick.miss{border-style:dashed;border-color:var(--a1);color:#1d5e36}
+.pick.rev{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer}
+.pick.rev .pw{font-family:var(--serif);font-weight:600;font-size:16px}
+.pick.rev .pw::after{content:" ♪";font-size:9px;color:var(--faint)}
+.pick.rev .pm{font-family:var(--kr);font-weight:500;font-size:11.5px;color:var(--muted);line-height:1.35;letter-spacing:-.01em}
+.pick.rev .pm.fakelbl{color:var(--c1);font-style:italic}
 .det-kr{font-family:var(--kr);font-weight:600;font-size:clamp(20px,5vw,30px);text-align:center;line-height:1.4}
 /* PLAN (오늘 학습) */
 .plan-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:6px 0 4px}
@@ -788,9 +793,14 @@ function detReal(){
       if(o.real && sel) b.classList.add('good');
       else if(o.real && !sel){ b.classList.add('miss'); allOk=false; if(o.d) markReview(o.d); }
       else if(!o.real && sel){ b.classList.add('bad'); allOk=false; }
-      b.style.pointerEvents='none';
+      // 정답 공개 후: 단어 클릭 시 발음, 진짜 단어는 뜻 표시
+      b.classList.add('rev');
+      const meaning = o.real ? esc((o.d&&o.d[3])||'') : '가짜 단어';
+      b.innerHTML='<span class="pw">'+esc(o.t)+'</span><span class="pm'+(o.real?'':' fakelbl')+'">'+meaning+'</span>';
+      b.style.pointerEvents='auto'; b.style.cursor='pointer'; b.title='클릭하면 발음';
+      b.onclick=()=>{ if(o.real&&o.d) speakWord(o.d); else speak(o.t); };
     });
-    $('#pFb').innerHTML= allOk? '<span class="ok">✓ 정답! 완벽해요</span>' : '<span class="no">✗ 오답</span> — 점선=놓친 진짜 단어, 빨강=가짜 단어';
+    $('#pFb').innerHTML= allOk? '<span class="ok">✓ 정답! 완벽해요</span> — 단어를 클릭하면 발음이 나와요' : '<span class="no">✗ 오답</span> — 점선=놓친 진짜 단어, 빨강=가짜 단어 · 단어 클릭 시 발음';
     $('#pGo').textContent='다음 문제 →';
     try{$('#pFb').scrollIntoView({block:'nearest',behavior:'smooth'});}catch(e){}
   }

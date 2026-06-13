@@ -318,6 +318,7 @@ h1 em{font-style:italic;font-weight:400}
       <div class="toggle" id="cardScope">
         <button data-scope="all" class="on">전체</button>
         <button data-scope="unknown">미암기만</button>
+        <button data-scope="weak">미암기 B2·C1 ⭐</button>
       </div>
       <button class="btn ghost" id="cShuffle">🔀 섞기</button>
       <button class="btn ghost" id="cReset">진행 초기화</button>
@@ -464,7 +465,14 @@ function render(){
   updateCounts();
   const fl=document.getElementById('filters'); if(fl) fl.classList.toggle('hide', state.mode==='plan');
   if(LIST_MODES.includes(state.mode)){
-    const items=statusFiltered().sort((a,b)=>a[0].toLowerCase().localeCompare(b[0].toLowerCase()) || a[0].localeCompare(b[0]));
+    let items=statusFiltered();
+    if(state.mode==='unknown' && state.lv==='ALL'){
+      // 미암기 전체 보기에서는 어려운 단어(B2·C1)를 위로
+      const rank={C1:0,B2:1,B1:2,A2:3,A1:4};
+      items=items.slice().sort((a,b)=>((rank[a[1]]??5)-(rank[b[1]]??5)) || a[0].toLowerCase().localeCompare(b[0].toLowerCase()));
+    } else {
+      items=items.sort((a,b)=>a[0].toLowerCase().localeCompare(b[0].toLowerCase()) || a[0].localeCompare(b[0]));
+    }
     $('#count').textContent = items.length.toLocaleString()+' 단어';
     renderList(items);
   } else if(state.mode==='card'){ renderCard(); }
@@ -507,9 +515,16 @@ function esc(s){return (s+'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':
 let deck=[], di=0, scope='all';
 function buildDeck(){
   let pool=filtered();
-  if(scope==='unknown') pool=pool.filter(d=>!isKnown(d));
+  if(scope==='unknown'){
+    pool=pool.filter(d=>!isKnown(d));
+    // 미암기는 어려운 단어(B2·C1)를 앞쪽에 배치
+    const rank={C1:0,B2:1,B1:2,A2:3,A1:4};
+    pool=pool.slice().sort((a,b)=>(rank[a[1]]??5)-(rank[b[1]]??5));
+  } else if(scope==='weak'){
+    pool=pool.filter(d=>!isKnown(d) && (d[1]==='B2'||d[1]==='C1'));
+  }
   deck=pool; di=0;
-  if(deck.length===0 && scope==='unknown'){ /* keep empty to show prompt */ }
+  if(deck.length===0 && (scope==='unknown'||scope==='weak')){ /* keep empty to show prompt */ }
   else if(deck.length===0){deck=filtered();}
 }
 function renderCard(){
@@ -518,7 +533,7 @@ function renderCard(){
   showCard();
 }
 function showCard(){
-  if(deck.length===0){ $('#fWord').textContent= scope==='unknown' ? '미암기 단어가 없어요 🎉' : '—'; $('#fKo').textContent=''; $('#fPos').textContent=''; $('#fLv').style.display='none'; $('#cardProg').textContent= scope==='unknown' ? '모두 암기 완료했거나, 필터에 해당하는 단어가 없어요' : ''; return; }
+  if(deck.length===0){ const none=(scope==='unknown'||scope==='weak'); $('#fWord').textContent= scope==='weak' ? 'B2·C1 미암기 단어가 없어요 🎉' : none ? '미암기 단어가 없어요 🎉' : '—'; $('#fKo').textContent=''; $('#fPos').textContent=''; $('#fLv').style.display='none'; $('#cardProg').textContent= none ? '모두 암기 완료했거나, 필터에 해당하는 단어가 없어요' : ''; return; }
   if(di>=deck.length) di=0; if(di<0) di=deck.length-1;
   const d=deck[di];
   $('#flash').classList.remove('flip');
@@ -899,7 +914,7 @@ function tasksFor(ds){
     {id:'c1_dict',label:'🚇 출근② (30분) — 문장 받아쓰기 20문장 (대문자·마침표까지)',go:{m:'det',dm:'dict'}},
     {id:'l_photo_w',label:'🍱 점심① (20분) — 사진 묘사 쓰기 3장 (Write About the Photo, 조용히)',go:{m:'det',dm:'photo'}},
     {id:'l_type',label:'🍱 점심② (15분) — 뜻 보고 쓰기 20문제 (Fill in the Blanks 대비)',go:{m:'det',dm:'type'}},
-    {id:'l_f',label:'🍱 점심③ (25분) — 단어 연료 보충: 플래시카드 미암기 40장 + 퀴즈 20문제',go:{m:'card',scope:'unknown'}},
+    {id:'l_f',label:'🍱 점심③ (25분) — 단어 연료 보충: 플래시카드 미암기 40장 + 퀴즈 20문제',go:{m:'card',scope:'weak'}},
     {id:'c2_dict',label:'🚇 퇴근① (30분) — 문장 받아쓰기 20문장',go:{m:'det',dm:'dict'}},
     {id:'c2_real',label:'🚇 퇴근② (30분) — 진짜 단어 고르기 20라운드 (확인 후 뜻·발음 복습)',go:{m:'det',dm:'real'}},
     {id:'e_x3',label:'🌙 저녁① (10분) — 표현 학습 4개 (예문 듣고 따라 말하기)',go:{m:'det',dm:'learn'}},
@@ -907,7 +922,7 @@ function tasksFor(ds){
     {id:'e_s1',label:'🌙 저녁③ (20분) — 말하기 2회 + 사진 묘사 말하기 1회 (집에서 소리 내어!)',go:{m:'det',dm:'speak'}},
     {id:'e_dict',label:'🌙 저녁④ (20분) — 문장 받아쓰기 15문장 (정확도 90% 목표)',go:{m:'det',dm:'dict'}},
     {id:'e_type',label:'🌙 저녁⑤ (15분) — 뜻 보고 쓰기 20문제 (철자·Fill in the Blanks 대비)',go:{m:'det',dm:'type'}},
-    {id:'e_f',label:'🌙 저녁⑥ (30분) — 단어 연료: 새 플래시카드 40장 + 진짜 단어 10라운드',go:{m:'card',scope:'unknown'}},
+    {id:'e_f',label:'🌙 저녁⑥ (30분) — 단어 연료: 새 플래시카드 40장 + 진짜 단어 10라운드',go:{m:'card',scope:'weak'}},
     {id:'e_w5',label:'🌙 저녁⑦ (5분) — 오늘 틀린 단어 미암기 탭에서 훑고 마무리',go:{m:'unknown'}},
   ];
   if(ds<'2026-07-14') return [ // 2단계: DET 전 유형 풀 로테이션
@@ -918,13 +933,13 @@ function tasksFor(ds){
     {id:'l_dict',label:'🍱 점심② (20분) — 문장 받아쓰기 18문장 (이어폰으로)',go:{m:'det',dm:'dict'}},
     {id:'l_x3',label:'🍱 점심③ (15분) — 표현 학습 4개 + 패턴으로 문장 만들기',go:{m:'det',dm:'learn'}},
     {id:'c2_dict',label:'🚇 퇴근① (30분) — 문장 받아쓰기 20문장',go:{m:'det',dm:'dict'}},
-    {id:'c2_f',label:'🚇 퇴근② (30분) — 단어 연료: 미암기 플래시카드 40장 + 퀴즈 20문제',go:{m:'card',scope:'unknown'}},
+    {id:'c2_f',label:'🚇 퇴근② (30분) — 단어 연료: 미암기 플래시카드 40장 + 퀴즈 20문제',go:{m:'card',scope:'weak'}},
     {id:'e_w1',label:'🌙 저녁① (20분) — 쓰기 연습 2회 (사진 묘사 1 + 일반 1, 자가 점검+모범답안)',go:{m:'det',dm:'write'}},
     {id:'e_s1',label:'🌙 저녁② (20분) — 말하기 연습 2회 + 사진 묘사 말하기 1 (집에서)',go:{m:'det',dm:'speak'}},
     {id:'e_dict',label:'🌙 저녁③ (20분) — 문장 받아쓰기 15문장',go:{m:'det',dm:'dict'}},
     {id:'e_real',label:'🌙 저녁④ (15분) — 진짜 단어 15라운드',go:{m:'det',dm:'real'}},
     {id:'e_type',label:'🌙 저녁⑤ (15분) — 뜻 보고 쓰기 15문제',go:{m:'det',dm:'type'}},
-    {id:'e_f',label:'🌙 저녁⑥ (30분) — 새 플래시카드 30장 + 오늘 틀린 것 복습',go:{m:'card',scope:'unknown'}},
+    {id:'e_f',label:'🌙 저녁⑥ (30분) — 새 플래시카드 30장 + 오늘 틀린 것 복습',go:{m:'card',scope:'weak'}},
     {id:'e_x',label:'🌙 저녁⑦ (5분) — 표현 학습 2개 복습 후 마무리',go:{m:'det',dm:'learn'}},
   ];
   const day=+ds.slice(-2);
@@ -952,7 +967,7 @@ function tasksFor(ds){
     {id:'e_s1',label:'🌙 저녁② (20분) — 말하기 2회 + 사진 묘사 말하기 1 (집에서 소리 내어)',go:{m:'det',dm:'speak'}},
     {id:'e_dict',label:'🌙 저녁③ (20분) — 문장 받아쓰기 15문장',go:{m:'det',dm:'dict'}},
     {id:'e_x3',label:'🌙 저녁④ (12분) — 표현 학습 4개 복습',go:{m:'det',dm:'learn'}},
-    {id:'e_f',label:'🌙 저녁⑤ (33분) — 단어 연료: 미암기 플래시카드 소진 + 퀴즈 30문제',go:{m:'card',scope:'unknown'}},
+    {id:'e_f',label:'🌙 저녁⑤ (33분) — 단어 연료: 미암기 플래시카드 소진 + 퀴즈 30문제',go:{m:'card',scope:'weak'}},
   ];
 }
 function planPct(ds){ const ts=tasksFor(ds); if(!ts.length) return 0; const c=plan[ds]||{}; return Math.round(ts.filter(t=>c[t.id]).length/ts.length*100); }
